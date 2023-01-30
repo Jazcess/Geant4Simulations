@@ -1,6 +1,0 @@
-#class tools::wcsv::ntuple
-#title Scoring
-#separator 44
-#vector_separator 59
-#column double fEdep
-0.642155
