@@ -1,0 +1,7 @@
+/control/verbose 2
+/vis/open OGL
+/vis/drawVolume
+/vis/viewer/reset
+/vis/viewer/set/projection perspective 50 deg
+/control/alias phi 30
+/control/loop movie.loop theta 0 360 1

@@ -1,0 +1,533 @@
+The system is: Linux - 3.10.0-1160.80.1.el7.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /cm/shared/apps/gcc/9.3/bin/gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/3.21.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /cm/shared/apps/gcc/9.3/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/3.21.2/CompilerIdCXX/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_fca00/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fca00.dir/build.make CMakeFiles/cmTC_fca00.dir/build
+gmake[1]: Entering directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o
+/cm/shared/apps/gcc/9.3/bin/gcc   -v -o CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o -c /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/cm/shared/apps/gcc/9.3/bin/gcc
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/cm/shared/apps/gcc/9.3
+Thread model: posix
+gcc version 9.3.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/cc1 -quiet -v /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o -version -o /local/jss55/cc7s3pmy.s
+GNU C17 (GCC) version 9.3.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 9.3.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/cm/shared/apps/gcc/9.3/include"
+  as it is a non-system directory that duplicates a system directory
+#include "..." search starts here:
+#include <...> search starts here:
+ /cm/shared/apps/qt/5.15/include
+ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include
+ /usr/local/include
+ /cm/shared/apps/gcc/9.3/include
+ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed
+ /usr/include
+End of search list.
+GNU C17 (GCC) version 9.3.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 9.3.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 4e7706386dbd6a854150bb5b75257c93
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o /local/jss55/cc7s3pmy.s
+GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1
+COMPILER_PATH=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/cm/shared/apps/gcc/9.3/lib64/../lib64/:/cm/shared/apps/gcc/9.3/lib/../lib64/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cm/shared/apps/qt/5.15/lib/:/cm/shared/apps/gcc/9.3/lib64/:/cm/shared/apps/gcc/9.3/lib/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_fca00
+/cm/shared/apps/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fca00.dir/link.txt --verbose=1
+/cm/shared/apps/gcc/9.3/bin/gcc  -v -rdynamic CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o -o cmTC_fca00 
+Using built-in specs.
+COLLECT_GCC=/cm/shared/apps/gcc/9.3/bin/gcc
+COLLECT_LTO_WRAPPER=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/cm/shared/apps/gcc/9.3
+Thread model: posix
+gcc version 9.3.0 (GCC) 
+COMPILER_PATH=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/cm/shared/apps/gcc/9.3/lib64/../lib64/:/cm/shared/apps/gcc/9.3/lib/../lib64/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cm/shared/apps/qt/5.15/lib/:/cm/shared/apps/gcc/9.3/lib64/:/cm/shared/apps/gcc/9.3/lib/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_fca00' '-mtune=generic' '-march=x86-64'
+ /cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/collect2 -plugin /cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/liblto_plugin.so -plugin-opt=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper -plugin-opt=-fresolution=/local/jss55/ccv3G2XD.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_fca00 /lib/../lib64/crt1.o /lib/../lib64/crti.o /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbegin.o -L/cm/shared/apps/gcc/9.3/lib64/../lib64 -L/cm/shared/apps/gcc/9.3/lib/../lib64 -L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0 -L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cm/shared/apps/qt/5.15/lib -L/cm/shared/apps/gcc/9.3/lib64 -L/cm/shared/apps/gcc/9.3/lib -L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../.. CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_fca00' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/cm/shared/apps/qt/5.15/include]
+    add: [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include]
+    add: [/usr/local/include]
+    add: [/cm/shared/apps/gcc/9.3/include]
+    add: [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/cm/shared/apps/qt/5.15/include] ==> [/cm/shared/apps/qt/5.15/include]
+  collapse include dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include] ==> [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/cm/shared/apps/gcc/9.3/include] ==> [/cm/shared/apps/gcc/9.3/include]
+  collapse include dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed] ==> [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/cm/shared/apps/qt/5.15/include;/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include;/usr/local/include;/cm/shared/apps/gcc/9.3/include;/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_fca00/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fca00.dir/build.make CMakeFiles/cmTC_fca00.dir/build]
+  ignore line: [gmake[1]: Entering directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/cm/shared/apps/gcc/9.3/bin/gcc   -v -o CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o -c /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/cm/shared/apps/gcc/9.3/bin/gcc]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/cm/shared/apps/gcc/9.3]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.3.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/cc1 -quiet -v /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o -version -o /local/jss55/cc7s3pmy.s]
+  ignore line: [GNU C17 (GCC) version 9.3.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/cm/shared/apps/gcc/9.3/include"]
+  ignore line: [  as it is a non-system directory that duplicates a system directory]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /cm/shared/apps/qt/5.15/include]
+  ignore line: [ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /cm/shared/apps/gcc/9.3/include]
+  ignore line: [ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (GCC) version 9.3.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 4e7706386dbd6a854150bb5b75257c93]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o /local/jss55/cc7s3pmy.s]
+  ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1]
+  ignore line: [COMPILER_PATH=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/cm/shared/apps/gcc/9.3/lib64/../lib64/:/cm/shared/apps/gcc/9.3/lib/../lib64/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cm/shared/apps/qt/5.15/lib/:/cm/shared/apps/gcc/9.3/lib64/:/cm/shared/apps/gcc/9.3/lib/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_fca00]
+  ignore line: [/cm/shared/apps/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fca00.dir/link.txt --verbose=1]
+  ignore line: [/cm/shared/apps/gcc/9.3/bin/gcc  -v -rdynamic CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o -o cmTC_fca00 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/cm/shared/apps/gcc/9.3/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/cm/shared/apps/gcc/9.3]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.3.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/cm/shared/apps/gcc/9.3/lib64/../lib64/:/cm/shared/apps/gcc/9.3/lib/../lib64/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cm/shared/apps/qt/5.15/lib/:/cm/shared/apps/gcc/9.3/lib64/:/cm/shared/apps/gcc/9.3/lib/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_fca00' '-mtune=generic' '-march=x86-64']
+  link line: [ /cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/collect2 -plugin /cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/liblto_plugin.so -plugin-opt=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper -plugin-opt=-fresolution=/local/jss55/ccv3G2XD.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_fca00 /lib/../lib64/crt1.o /lib/../lib64/crti.o /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbegin.o -L/cm/shared/apps/gcc/9.3/lib64/../lib64 -L/cm/shared/apps/gcc/9.3/lib/../lib64 -L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0 -L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cm/shared/apps/qt/5.15/lib -L/cm/shared/apps/gcc/9.3/lib64 -L/cm/shared/apps/gcc/9.3/lib -L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../.. CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/local/jss55/ccv3G2XD.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_fca00] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+    arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+    arg [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbegin.o] ==> obj [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbegin.o]
+    arg [-L/cm/shared/apps/gcc/9.3/lib64/../lib64] ==> dir [/cm/shared/apps/gcc/9.3/lib64/../lib64]
+    arg [-L/cm/shared/apps/gcc/9.3/lib/../lib64] ==> dir [/cm/shared/apps/gcc/9.3/lib/../lib64]
+    arg [-L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0] ==> dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0]
+    arg [-L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64] ==> dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/cm/shared/apps/qt/5.15/lib] ==> dir [/cm/shared/apps/qt/5.15/lib]
+    arg [-L/cm/shared/apps/gcc/9.3/lib64] ==> dir [/cm/shared/apps/gcc/9.3/lib64]
+    arg [-L/cm/shared/apps/gcc/9.3/lib] ==> dir [/cm/shared/apps/gcc/9.3/lib]
+    arg [-L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../..] ==> dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../..]
+    arg [CMakeFiles/cmTC_fca00.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtend.o] ==> obj [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtend.o]
+    arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+  collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+  collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+  collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib64/../lib64] ==> [/cm/shared/apps/gcc/9.3/lib64]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib/../lib64] ==> [/cm/shared/apps/gcc/9.3/lib64]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0] ==> [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64] ==> [/cm/shared/apps/gcc/9.3/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/cm/shared/apps/qt/5.15/lib] ==> [/cm/shared/apps/qt/5.15/lib]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib64] ==> [/cm/shared/apps/gcc/9.3/lib64]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib] ==> [/cm/shared/apps/gcc/9.3/lib]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../..] ==> [/cm/shared/apps/gcc/9.3/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit objs: [/lib64/crt1.o;/lib64/crti.o;/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbegin.o;/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtend.o;/lib64/crtn.o]
+  implicit dirs: [/cm/shared/apps/gcc/9.3/lib64;/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0;/lib64;/usr/lib64;/cm/shared/apps/qt/5.15/lib;/cm/shared/apps/gcc/9.3/lib]
+  implicit fwks: []
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8b517/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8b517.dir/build.make CMakeFiles/cmTC_8b517.dir/build
+gmake[1]: Entering directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o
+/cm/shared/apps/gcc/9.3/bin/c++   -v -o CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o -c /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/cm/shared/apps/gcc/9.3/bin/c++
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/cm/shared/apps/gcc/9.3
+Thread model: posix
+gcc version 9.3.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/cc1plus -quiet -v -D_GNU_SOURCE /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o -version -o /local/jss55/cctIiTCN.s
+GNU C++14 (GCC) version 9.3.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 9.3.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/cm/shared/apps/gcc/9.3/include"
+  as it is a non-system directory that duplicates a system directory
+#include "..." search starts here:
+#include <...> search starts here:
+ /cm/shared/apps/qt/5.15/include
+ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0
+ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu
+ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/backward
+ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include
+ /usr/local/include
+ /cm/shared/apps/gcc/9.3/include
+ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed
+ /usr/include
+End of search list.
+GNU C++14 (GCC) version 9.3.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 9.3.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 917366191288335b36b668b8a8bbcb49
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o /local/jss55/cctIiTCN.s
+GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1
+COMPILER_PATH=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/cm/shared/apps/gcc/9.3/lib64/../lib64/:/cm/shared/apps/gcc/9.3/lib/../lib64/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cm/shared/apps/qt/5.15/lib/:/cm/shared/apps/gcc/9.3/lib64/:/cm/shared/apps/gcc/9.3/lib/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_8b517
+/cm/shared/apps/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8b517.dir/link.txt --verbose=1
+/cm/shared/apps/gcc/9.3/bin/c++  -v -rdynamic CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8b517 
+Using built-in specs.
+COLLECT_GCC=/cm/shared/apps/gcc/9.3/bin/c++
+COLLECT_LTO_WRAPPER=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/cm/shared/apps/gcc/9.3
+Thread model: posix
+gcc version 9.3.0 (GCC) 
+COMPILER_PATH=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/cm/shared/apps/gcc/9.3/lib64/../lib64/:/cm/shared/apps/gcc/9.3/lib/../lib64/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cm/shared/apps/qt/5.15/lib/:/cm/shared/apps/gcc/9.3/lib64/:/cm/shared/apps/gcc/9.3/lib/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8b517' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/collect2 -plugin /cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/liblto_plugin.so -plugin-opt=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper -plugin-opt=-fresolution=/local/jss55/ccjlamiT.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8b517 /lib/../lib64/crt1.o /lib/../lib64/crti.o /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbegin.o -L/cm/shared/apps/gcc/9.3/lib64/../lib64 -L/cm/shared/apps/gcc/9.3/lib/../lib64 -L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0 -L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cm/shared/apps/qt/5.15/lib -L/cm/shared/apps/gcc/9.3/lib64 -L/cm/shared/apps/gcc/9.3/lib -L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../.. CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8b517' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/cm/shared/apps/qt/5.15/include]
+    add: [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0]
+    add: [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu]
+    add: [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/backward]
+    add: [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include]
+    add: [/usr/local/include]
+    add: [/cm/shared/apps/gcc/9.3/include]
+    add: [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/cm/shared/apps/qt/5.15/include] ==> [/cm/shared/apps/qt/5.15/include]
+  collapse include dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0] ==> [/cm/shared/apps/gcc/9.3/include/c++/9.3.0]
+  collapse include dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu] ==> [/cm/shared/apps/gcc/9.3/include/c++/9.3.0/x86_64-pc-linux-gnu]
+  collapse include dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/backward] ==> [/cm/shared/apps/gcc/9.3/include/c++/9.3.0/backward]
+  collapse include dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include] ==> [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/cm/shared/apps/gcc/9.3/include] ==> [/cm/shared/apps/gcc/9.3/include]
+  collapse include dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed] ==> [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/cm/shared/apps/qt/5.15/include;/cm/shared/apps/gcc/9.3/include/c++/9.3.0;/cm/shared/apps/gcc/9.3/include/c++/9.3.0/x86_64-pc-linux-gnu;/cm/shared/apps/gcc/9.3/include/c++/9.3.0/backward;/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include;/usr/local/include;/cm/shared/apps/gcc/9.3/include;/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8b517/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8b517.dir/build.make CMakeFiles/cmTC_8b517.dir/build]
+  ignore line: [gmake[1]: Entering directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/cm/shared/apps/gcc/9.3/bin/c++   -v -o CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o -c /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/cm/shared/apps/gcc/9.3/bin/c++]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/cm/shared/apps/gcc/9.3]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.3.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/cc1plus -quiet -v -D_GNU_SOURCE /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o -version -o /local/jss55/cctIiTCN.s]
+  ignore line: [GNU C++14 (GCC) version 9.3.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/cm/shared/apps/gcc/9.3/include"]
+  ignore line: [  as it is a non-system directory that duplicates a system directory]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /cm/shared/apps/qt/5.15/include]
+  ignore line: [ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0]
+  ignore line: [ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu]
+  ignore line: [ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/backward]
+  ignore line: [ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /cm/shared/apps/gcc/9.3/include]
+  ignore line: [ /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++14 (GCC) version 9.3.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 917366191288335b36b668b8a8bbcb49]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o /local/jss55/cctIiTCN.s]
+  ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1]
+  ignore line: [COMPILER_PATH=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/cm/shared/apps/gcc/9.3/lib64/../lib64/:/cm/shared/apps/gcc/9.3/lib/../lib64/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cm/shared/apps/qt/5.15/lib/:/cm/shared/apps/gcc/9.3/lib64/:/cm/shared/apps/gcc/9.3/lib/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_8b517]
+  ignore line: [/cm/shared/apps/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8b517.dir/link.txt --verbose=1]
+  ignore line: [/cm/shared/apps/gcc/9.3/bin/c++  -v -rdynamic CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8b517 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/cm/shared/apps/gcc/9.3/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/cm/shared/apps/gcc/9.3]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.3.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/cm/shared/apps/gcc/9.3/lib64/../lib64/:/cm/shared/apps/gcc/9.3/lib/../lib64/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cm/shared/apps/qt/5.15/lib/:/cm/shared/apps/gcc/9.3/lib64/:/cm/shared/apps/gcc/9.3/lib/:/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8b517' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/collect2 -plugin /cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/liblto_plugin.so -plugin-opt=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper -plugin-opt=-fresolution=/local/jss55/ccjlamiT.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8b517 /lib/../lib64/crt1.o /lib/../lib64/crti.o /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbegin.o -L/cm/shared/apps/gcc/9.3/lib64/../lib64 -L/cm/shared/apps/gcc/9.3/lib/../lib64 -L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0 -L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cm/shared/apps/qt/5.15/lib -L/cm/shared/apps/gcc/9.3/lib64 -L/cm/shared/apps/gcc/9.3/lib -L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../.. CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/cm/shared/apps/gcc/9.3/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/local/jss55/ccjlamiT.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_8b517] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+    arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+    arg [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbegin.o] ==> obj [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbegin.o]
+    arg [-L/cm/shared/apps/gcc/9.3/lib64/../lib64] ==> dir [/cm/shared/apps/gcc/9.3/lib64/../lib64]
+    arg [-L/cm/shared/apps/gcc/9.3/lib/../lib64] ==> dir [/cm/shared/apps/gcc/9.3/lib/../lib64]
+    arg [-L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0] ==> dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0]
+    arg [-L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64] ==> dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/cm/shared/apps/qt/5.15/lib] ==> dir [/cm/shared/apps/qt/5.15/lib]
+    arg [-L/cm/shared/apps/gcc/9.3/lib64] ==> dir [/cm/shared/apps/gcc/9.3/lib64]
+    arg [-L/cm/shared/apps/gcc/9.3/lib] ==> dir [/cm/shared/apps/gcc/9.3/lib]
+    arg [-L/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../..] ==> dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../..]
+    arg [CMakeFiles/cmTC_8b517.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtend.o] ==> obj [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtend.o]
+    arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+  collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+  collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+  collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib64/../lib64] ==> [/cm/shared/apps/gcc/9.3/lib64]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib/../lib64] ==> [/cm/shared/apps/gcc/9.3/lib64]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0] ==> [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64] ==> [/cm/shared/apps/gcc/9.3/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/cm/shared/apps/qt/5.15/lib] ==> [/cm/shared/apps/qt/5.15/lib]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib64] ==> [/cm/shared/apps/gcc/9.3/lib64]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib] ==> [/cm/shared/apps/gcc/9.3/lib]
+  collapse library dir [/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../..] ==> [/cm/shared/apps/gcc/9.3/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit objs: [/lib64/crt1.o;/lib64/crti.o;/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbegin.o;/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtend.o;/lib64/crtn.o]
+  implicit dirs: [/cm/shared/apps/gcc/9.3/lib64;/cm/shared/apps/gcc/9.3/lib/gcc/x86_64-pc-linux-gnu/9.3.0;/lib64;/usr/lib64;/cm/shared/apps/qt/5.15/lib;/cm/shared/apps/gcc/9.3/lib]
+  implicit fwks: []
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_437a9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_437a9.dir/build.make CMakeFiles/cmTC_437a9.dir/build
+gmake[1]: Entering directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_437a9.dir/CheckIncludeFile.c.o
+/cm/shared/apps/gcc/9.3/bin/gcc    -o CMakeFiles/cmTC_437a9.dir/CheckIncludeFile.c.o -c /home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_437a9
+/cm/shared/apps/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_437a9.dir/link.txt --verbose=1
+/cm/shared/apps/gcc/9.3/bin/gcc CMakeFiles/cmTC_437a9.dir/CheckIncludeFile.c.o -o cmTC_437a9 
+gmake[1]: Leaving directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function XOpenDisplay exists in the /usr/lib64/libX11.so;/usr/lib64/libXext.so passed with the following output:
+Change Dir: /home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e0d67/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e0d67.dir/build.make CMakeFiles/cmTC_e0d67.dir/build
+gmake[1]: Entering directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e0d67.dir/CheckFunctionExists.c.o
+/cm/shared/apps/gcc/9.3/bin/gcc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_e0d67.dir/CheckFunctionExists.c.o -c /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e0d67
+/cm/shared/apps/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e0d67.dir/link.txt --verbose=1
+/cm/shared/apps/gcc/9.3/bin/gcc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_e0d67.dir/CheckFunctionExists.c.o -o cmTC_e0d67  /usr/lib64/libX11.so /usr/lib64/libXext.so 
+gmake[1]: Leaving directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_259e3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_259e3.dir/build.make CMakeFiles/cmTC_259e3.dir/build
+gmake[1]: Entering directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_259e3.dir/CheckFunctionExists.c.o
+/cm/shared/apps/gcc/9.3/bin/gcc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_259e3.dir/CheckFunctionExists.c.o -c /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_259e3
+/cm/shared/apps/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_259e3.dir/link.txt --verbose=1
+/cm/shared/apps/gcc/9.3/bin/gcc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_259e3.dir/CheckFunctionExists.c.o -o cmTC_259e3 
+gmake[1]: Leaving directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_38c35/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_38c35.dir/build.make CMakeFiles/cmTC_38c35.dir/build
+gmake[1]: Entering directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_38c35.dir/CheckFunctionExists.c.o
+/cm/shared/apps/gcc/9.3/bin/gcc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_38c35.dir/CheckFunctionExists.c.o -c /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_38c35
+/cm/shared/apps/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_38c35.dir/link.txt --verbose=1
+/cm/shared/apps/gcc/9.3/bin/gcc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_38c35.dir/CheckFunctionExists.c.o -o cmTC_38c35 
+gmake[1]: Leaving directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_eabab/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_eabab.dir/build.make CMakeFiles/cmTC_eabab.dir/build
+gmake[1]: Entering directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eabab.dir/CheckFunctionExists.c.o
+/cm/shared/apps/gcc/9.3/bin/gcc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_eabab.dir/CheckFunctionExists.c.o -c /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_eabab
+/cm/shared/apps/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eabab.dir/link.txt --verbose=1
+/cm/shared/apps/gcc/9.3/bin/gcc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_eabab.dir/CheckFunctionExists.c.o -o cmTC_eabab 
+gmake[1]: Leaving directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c379a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c379a.dir/build.make CMakeFiles/cmTC_c379a.dir/build
+gmake[1]: Entering directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c379a.dir/CheckFunctionExists.c.o
+/cm/shared/apps/gcc/9.3/bin/gcc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_c379a.dir/CheckFunctionExists.c.o -c /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c379a
+/cm/shared/apps/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c379a.dir/link.txt --verbose=1
+/cm/shared/apps/gcc/9.3/bin/gcc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_c379a.dir/CheckFunctionExists.c.o -o cmTC_c379a 
+gmake[1]: Leaving directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_41aef/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_41aef.dir/build.make CMakeFiles/cmTC_41aef.dir/build
+gmake[1]: Entering directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_41aef.dir/CheckFunctionExists.c.o
+/cm/shared/apps/gcc/9.3/bin/gcc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_41aef.dir/CheckFunctionExists.c.o -c /cm/shared/apps/cmake/3.21.2/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_41aef
+/cm/shared/apps/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_41aef.dir/link.txt --verbose=1
+/cm/shared/apps/gcc/9.3/bin/gcc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_41aef.dir/CheckFunctionExists.c.o -o cmTC_41aef  -lICE 
+gmake[1]: Leaving directory `/lustre/ahome3/j/jss55/Software/geant4/scintillationSim/CMakeFiles/CMakeTmp'
+
+
+
