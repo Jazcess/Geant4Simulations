@@ -1,0 +1,13 @@
+/control/verbose 0
+/tracking/verbose 0
+/event/verbose 0
+/gps/verbose 2
+/gps/particle mu+
+/gps/ene/type Mono
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/centre 0 0 0 cm
+/gps/pos/halfx 50 cm
+/gps/pos/halfy 50 cm
+/gps/ang/type iso
+/gps/number 1

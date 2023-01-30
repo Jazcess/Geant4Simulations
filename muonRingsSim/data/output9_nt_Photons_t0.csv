@@ -1,0 +1,10 @@
+#class tools::wcsv::ntuple
+#title Photons
+#separator 44
+#vector_separator 59
+#column int fEvent
+#column double fX
+#column double fY
+#column double fZ
+#column double fwlen
+0,-212.25,-61.0529,480,2.74192e-05
