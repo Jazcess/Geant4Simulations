@@ -1,0 +1,17 @@
+/vis/open OGL
+/vis/viewer/set/viewpointVector 10 0 0
+/vis/drawVolume
+/vis/viewer/set/autoRefresh true
+/vis/scene/add/trajectories smooth
+/vis/scene/add/scale 10 mm
+/vis/scene/add/axes
+/vis/scene/add/eventID
+/vis/scene/endOfEventAction accumulate
+/vis/geometry/set/colour logicWorld 0 0 0 1 .3
+/vis/viewer/set/style surface
+/vis/viewer/set/hiddenMarker true
+/vis/geometry/set/colour logicWLS 0 1 1 0 .3
+/vis/viewer/set/style surface
+/vis/viewer/set/hiddenMarker true
+/vis/viewer/set/viewpointThetaPhi 360 0
+/vis/viewer/zoom 2
