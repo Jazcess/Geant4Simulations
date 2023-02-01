@@ -1,0 +1,43 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/j/jss55/Software/geant4/muonRingsSim/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_183d7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_183d7.dir/build.make CMakeFiles/cmTC_183d7.dir/build
+gmake[1]: Entering directory `/lustre/ahome3/j/jss55/Software/geant4/muonRingsSim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_183d7.dir/src.c.o
+/cm/shared/apps/gcc/9.3/bin/gcc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_183d7.dir/src.c.o -c /home/j/jss55/Software/geant4/muonRingsSim/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_183d7
+/cm/shared/apps/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_183d7.dir/link.txt --verbose=1
+/cm/shared/apps/gcc/9.3/bin/gcc CMakeFiles/cmTC_183d7.dir/src.c.o -o cmTC_183d7 
+CMakeFiles/cmTC_183d7.dir/src.c.o: In function `main':
+src.c:(.text+0x2d): undefined reference to `pthread_create'
+src.c:(.text+0x39): undefined reference to `pthread_detach'
+src.c:(.text+0x45): undefined reference to `pthread_cancel'
+src.c:(.text+0x56): undefined reference to `pthread_join'
+src.c:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_183d7] Error 1
+gmake[1]: Leaving directory `/lustre/ahome3/j/jss55/Software/geant4/muonRingsSim/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_183d7/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
