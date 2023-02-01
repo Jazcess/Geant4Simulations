@@ -2,7 +2,45 @@
 
 
 MyDetectorConstruction::MyDetectorConstruction()
-{}
+{
+    dMessenger = new G4GenericMessenger(this, "/detector/", "Detector Construction");
+    wMessenger = new G4GenericMessenger(this, "/world/", "World Construction");
+    aMessenger = new G4GenericMessenger(this, "/aerogel/", "Aerogel Construction");
+
+    dMessenger->DeclareProperty("nCols", nCols, "Number of columns");
+    dMessenger->DeclareProperty("nRows", nRows, "Number of rows");
+    dMessenger->DeclareProperty("xDet", xDet, "X length of detector");
+    dMessenger->DeclareProperty("yDet", yDet, "Y length of detector");
+    wMessenger->DeclareProperty("xWorld", xWorld, "X length of world");
+    wMessenger->DeclareProperty("yWorld", yWorld, "Y length of world");
+    wMessenger->DeclareProperty("zWorld", zWorld, "Z length of world");
+    aMessenger->DeclareProperty("xAerogel", xAerogel, "X length of aerogel");
+    aMessenger->DeclareProperty("yAerogel", yAerogel, "Y length of aerogel");
+    aMessenger->DeclareProperty("zAerogel", zAerogel, "Z length of aerogel");
+    aMessenger->DeclareProperty("dAerogel", dAerogel, "Distance from aerogel to detectors");
+    aMessenger->DeclareProperty("rAerogel", rAerogel, "Refractive index of aerogel");
+
+    nCols = 10;
+    nRows = 10;
+
+    xWorld = 0.05*m;
+    yWorld = 0.05*m;
+    zWorld = 0.05*m;
+
+    xAerogel = 0.02*m;
+    yAerogel = 0.02*m;
+    zAerogel = 0.005*m;
+    dAerogel = 0.04*m;
+    rAerogel = 1.1;
+
+    xDet = 0.012*m;
+    yDet = 0.012*m;
+
+    xPixel = xDet/nCols;
+    yPixel = yDet/nRows;
+    zPixel = 0.001*m;
+
+}
 
 MyDetectorConstruction::~MyDetectorConstruction()
 {}
@@ -28,7 +66,7 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
 
 	G4double energy[2] = {1.239841939*eV/0.9, 1.239841939*eV/0.2}; //momentum of photons usng conversion factor *eV / wavlength of red light and blue light
 
-	G4double rindexAerogel[2] = {1.1, 1.1}; //refractive index of aerogel
+	G4double rindexAerogel[2] = {rAerogel, rAerogel}; //refractive index of aerogel
 	G4double rindexWorld[2] = {1.0, 1.0}; //refractive index of the world volume (air)
 
 	G4MaterialPropertiesTable *mptAerogel = new G4MaterialPropertiesTable(); //creating aerogel material properties object
@@ -46,31 +84,36 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
 
 
 
-	G4Box *solidWorld = new G4Box("solidWorld", 0.5*m, 0.5*m, 0.5*m); //setting up world volume as a box
+	G4Box *solidWorld = new G4Box("solidWorld", xWorld, yWorld, zWorld); //setting up world volume as a box
 
 	G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld"); //creating the world as dimensions from box and material (Air)
 
 	G4VPhysicalVolume *physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWorld", 0, false, 0, true); //placing the world into geant 4 sim
 
-	G4Box *solidRadiator = new G4Box("solidRadiator", 4*cm, 4*cm, 1*cm); //setting the dimensions for the radiator
+	G4Box *solidRadiator = new G4Box("solidRadiator", xAerogel, yAerogel, zAerogel); //setting the dimensions for the radiator
 
 	G4LogicalVolume *logicRadiator = new G4LogicalVolume(solidRadiator, Aerogel, "logicRadiator"); //creating the aergoel radiator from dimensions
 
-	G4VPhysicalVolume *physRadiator = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.42*m), logicRadiator, "physRadiator", logicWorld, false, 0, true); //placing radiator into world volume
+	G4VPhysicalVolume *physRadiator = new G4PVPlacement(0, G4ThreeVector(0., 0., zWorld - dAerogel), logicRadiator, "physRadiator", logicWorld, false, 0, true); //placing radiator into world volume
 
-	G4Box *solidDetector = new G4Box("solidDetector", 0.005*m, 0.005*m, 0.01*m);  //setting the dimensions for the detectors
+	G4Box *solidDetector = new G4Box("solidDetector", xPixel, yPixel, zPixel);  //setting the dimensions for the detectors
 
 	logicDetector = new G4LogicalVolume(solidDetector, worldMat, "logicDetector"); //creating the detectors, with same material as world
 
 
 
-	for(G4int i = 0; i < 100; i++)
+	for(G4int i = 0; i < nCols; i++)
 	{
 
-		for(G4int j = 0; j < 100; j++)
+		for(G4int j = 0; j < nRows; j++)
 		{
+		    posX = -xDet+(i*2*xPixel);
 
-			G4VPhysicalVolume *physDetector= new G4PVPlacement(0, G4ThreeVector(-0.5*m+(i+0.5)*m/100, -0.5*m+(j+0.5)*m/100, 0.49*m), logicDetector, "physDetector", logicWorld, false, j+i*100, true); //placing 100*100 detectors into the world
+		    posY = -yDet+(j*2*yPixel);
+
+		    posZ = zWorld - zPixel;
+
+			G4VPhysicalVolume *physDetector= new G4PVPlacement(0, G4ThreeVector(posX, posY, posZ), logicDetector, "physDetector", logicWorld, false, j+i*nCols, true); //placing detectors into the world
 
 		}
 	}

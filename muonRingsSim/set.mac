@@ -1,0 +1,16 @@
+# Particle
+/gun/particle mu+
+/gun/energy 4 GeV
+
+# World
+/world/xWorld 0.1
+/world/yWorld 0.1
+/world/zWorld 0.1
+
+# Detector
+/detector/xDet 0.024
+/detector/yDet 0.024
+# nCols*nRows = num of pixels
+/detector/nCols 100
+/detector/nRows 100
+
