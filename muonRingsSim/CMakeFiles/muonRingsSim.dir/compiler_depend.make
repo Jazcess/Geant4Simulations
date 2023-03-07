@@ -1030,7 +1030,17 @@ CMakeFiles/muonRingsSim.dir/construction.cc.o: construction.cc \
   /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4P2ToolsManager.hh \
   /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4GenericAnalysisManager.icc \
   /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4GenericFileManager.hh \
-  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4GenericFileManager.icc
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4GenericFileManager.icc \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4PhysicalVolumeStore.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4VStoreNotifier.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4VNotifier.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4GeometryManager.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4SmartVoxelStat.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4RunManagerKernel.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4UImanager.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/icomsdefs.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4VStateDependent.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4UIcommandStatus.hh
 
 CMakeFiles/muonRingsSim.dir/detector.cc.o: detector.cc \
   /usr/include/stdc-predef.h \
@@ -2643,6 +2653,12 @@ CMakeFiles/muonRingsSim.dir/muonRingsSim.cc.o: muonRingsSim.cc \
   /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4GenericAnalysisManager.icc \
   /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4GenericFileManager.hh \
   /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4GenericFileManager.icc \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4PhysicalVolumeStore.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4VStoreNotifier.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4VNotifier.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4GeometryManager.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4SmartVoxelStat.hh \
+  /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4RunManagerKernel.hh \
   physics.hh \
   /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4VModularPhysicsList.hh \
   /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4VPhysicsConstructor.hh \
@@ -3654,8 +3670,6 @@ physics.hh:
 
 /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4VisExecutive.hh:
 
-/home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4TrajectoriesModel.hh:
-
 /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4Scene.icc:
 
 /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4Scene.hh:
@@ -3709,6 +3723,14 @@ muonRingsSim.cc:
 generator.cc:
 
 detector.cc:
+
+/home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4TrajectoriesModel.hh:
+
+/home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4SmartVoxelStat.hh:
+
+/home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4GeometryManager.hh:
+
+/home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4PhysicalVolumeStore.hh:
 
 /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4RunManagerKernel.hh:
 
@@ -4137,6 +4159,8 @@ detector.hh:
 /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/CLHEP/Random/RandPoisson.icc:
 
 /cm/shared/apps/gcc/9.3/include/c++/9.3.0/bits/exception.h:
+
+/home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4VStoreNotifier.hh:
 
 /cm/shared/apps/gcc/9.3/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/error_constants.h:
 
@@ -4711,6 +4735,8 @@ generator.hh:
 /home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4EnvironmentUtils.hh:
 
 /cm/shared/apps/gcc/9.3/include/c++/9.3.0/fstream:
+
+/home/j/jss55/Software/geant4/geant4-v11.0.3.mt.install/include/Geant4/G4VNotifier.hh:
 
 /usr/include/stdio.h:
 

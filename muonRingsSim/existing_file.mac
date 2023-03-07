@@ -1,9 +1,6 @@
-/control/alias Energy 5
-
-
 #Particle
 /gun/particle mu+
-/gun/energy Energy GeV
+/gun/energy 4 GeV
 
 #World
 /world/xWorld 0.06
@@ -18,19 +15,20 @@
 /detector/nRows 10
 
 #Aerogel
-/Radiator1/xRadiator1 0.02
-/Radiator1/yRadiator1 0.02
-/Radiator1/zRadiator1 0.005
-/Radiator1/dRadiator1 0.04
+/aerogel/xAerogel 0.02
+/aerogel/yAerogel 0.02
+/aerogel/zAerogel 0.005
+/aerogel/dAerogel 0.04
+/aerogel/rAerogel 1.1
 
 #Materials
-/materials/mRadiator1 2
+/materials/mRadiator 2
 #1=water,2=aerogel
 /materials/mWorld 3
 #3=air
 
 
 #Run
-#/run/initialize
-#/run/reinitializeGeometry
-#/run/beamOn 1
+/run/initialize
+/run/reinitializeGeometry
+/run/beamOn 1

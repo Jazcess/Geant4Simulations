@@ -5,7 +5,7 @@ from matplotlib.colors import LogNorm
 
 
 
-output = 'data/output0_nt_Photons.csv'
+output = 'data/air-gap.csv'
 
 
 fEvent = []
