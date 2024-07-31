@@ -8,7 +8,7 @@
 #include "G4PVPlacement.hh"
 #include "G4NistManager.hh"
 #include "G4SystemOfUnits.hh"
-
+#include "G4GenericMessenger.hh"
 #include "detector.hh"
 
 class MyDetectorConstruction : public G4VUserDetectorConstruction
@@ -22,6 +22,10 @@ public:
 private:
 	G4LogicalVolume *logicDetector;
 	virtual void ConstructSDandField();
+
+	G4double nCols, nRows, xWorld, yWorld, zWorld, xAerogel, yAerogel, zAerogel, rAerogel, dAerogel, xPixel, yPixel, zPixel, posX, posY, posZ, xDet, yDet;
+
+	G4GenericMessenger *dMessenger, *wMessenger, *aMessenger;
 };
 
 #endif
