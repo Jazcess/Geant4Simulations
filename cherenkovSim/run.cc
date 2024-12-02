@@ -4,25 +4,17 @@ MyRunAction::MyRunAction()
 {
 	G4AnalysisManager *man = G4AnalysisManager::Instance();
 
+    //Creating data tables, to save as .csv files
     man->CreateNtuple("Photons", "Photons");
 	man->CreateNtupleIColumn("fEvent");
+	man->CreateNtupleIColumn("fDetID");
 	man->CreateNtupleDColumn("fX");
 	man->CreateNtupleDColumn("fY");
 	man->CreateNtupleDColumn("fZ");
 	man->CreateNtupleDColumn("fwlen");
-	//man->CreateNtupleDColumn("fT");
+	man->CreateNtupleDColumn("fT");
 	man->FinishNtuple(0);
 
-	man->CreateNtuple("Hits", "Hits");
-	man->CreateNtupleIColumn("fEvent");
-	man->CreateNtupleDColumn("fX");
-	man->CreateNtupleDColumn("fY");
-	man->CreateNtupleDColumn("fZ");
-	man->FinishNtuple(1);
-
-	man->CreateNtuple("Scoring", "Scoring");
-	man->CreateNtupleDColumn("fEdep");
-	man->FinishNtuple(2);
 }
 
 MyRunAction::~MyRunAction()
@@ -37,7 +29,8 @@ void MyRunAction::BeginOfRunAction(const G4Run* run)
 	std::stringstream strRunID;
 	strRunID << runID;
 
-	man->OpenFile("data/output"+strRunID.str()+".csv");
+	//man->OpenFile("data/output"+strRunID.str()+".csv"); //save as .csv file
+	man->OpenFile("data/output"+strRunID.str()+".root"); //save as .root file
 
 
 }
