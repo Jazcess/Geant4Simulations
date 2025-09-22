@@ -1,0 +1,304 @@
+
+#include "construction.hh"
+
+
+MyDetectorConstruction::MyDetectorConstruction()
+{
+    xWorld = 0.5*m;
+    yWorld = 0.5*m;
+    zWorld = 0.5*m;
+
+    DefineMaterials();
+}
+
+MyDetectorConstruction::~MyDetectorConstruction()
+{}
+
+void MyDetectorConstruction::DefineMaterials()
+{
+    G4NistManager *nist = G4NistManager::Instance();  //the geant4 nist material database
+
+
+
+//--------------------------PMMA-WLS---------------------------------
+
+  PMMA = new G4Material("PMMA", 1.190*g/cm3, 3); //defining material object
+  PMMA->AddElement(nist->FindOrBuildElement("O"), 2);
+  PMMA->AddElement(nist->FindOrBuildElement("H"), 8); //adding the hydrogen element to object
+	PMMA->AddElement(nist->FindOrBuildElement("C"), 5); //adding the Carbon element to object
+
+//--------------------------ENERGY-and-RINDEX---------------------------------
+
+  const G4int nEntries = 11;
+
+  G4double hc = ((6.62607015*10e-34)*(299792458));
+
+  G4double photonEnergy[nEntries] =
+  {hc/(650*10e-9*1.6*10e-19)*eV, hc/(600*10e-9*1.6*10e-19)*eV, hc/(550*10e-9*1.6*10e-19)*eV, hc/(500*10e-9*1.6*10e-19)*eV,
+   hc/(427*10e-9*1.6*10e-19)*eV, hc/(405*10e-9*1.6*10e-19)*eV, hc/(385*10e-9*1.6*10e-19)*eV, hc/(376*10e-9*1.6*10e-19)*eV,
+   hc/(350*10e-9*1.6*10e-19)*eV, hc/(300*10e-9*1.6*10e-19)*eV, hc/(250*10e-9*1.6*10e-19)*eV};
+
+   G4double photonEnergyWater[32] = {
+      2.034 * eV, 2.068 * eV, 2.103 * eV, 2.139 * eV, 2.177 * eV, 2.216 * eV,
+      2.256 * eV, 2.298 * eV, 2.341 * eV, 2.386 * eV, 2.433 * eV, 2.481 * eV,
+      2.532 * eV, 2.585 * eV, 2.640 * eV, 2.697 * eV, 2.757 * eV, 2.820 * eV,
+      2.885 * eV, 2.954 * eV, 3.026 * eV, 3.102 * eV, 3.181 * eV, 3.265 * eV,
+      3.353 * eV, 3.446 * eV, 3.545 * eV, 3.649 * eV, 3.760 * eV, 3.877 * eV,
+      4.002 * eV, 4.136 * eV
+    };
+
+    std::vector<G4double> WLSenergy = {
+   2.00 * eV, 2.03 * eV, 2.06 * eV, 2.09 * eV, 2.12 * eV, 2.15 * eV, 2.18 * eV,
+   2.21 * eV, 2.24 * eV, 2.27 * eV, 2.30 * eV, 2.33 * eV, 2.36 * eV, 2.39 * eV,
+   2.42 * eV, 2.45 * eV, 2.48 * eV, 2.51 * eV, 2.54 * eV, 2.57 * eV, 2.60 * eV,
+   2.63 * eV, 2.66 * eV, 2.69 * eV, 2.72 * eV, 2.75 * eV, 2.78 * eV, 2.81 * eV,
+   2.84 * eV, 2.87 * eV, 2.90 * eV, 2.93 * eV, 2.96 * eV, 2.99 * eV, 3.02 * eV,
+   3.05 * eV, 3.08 * eV, 3.11 * eV, 3.14 * eV, 3.17 * eV, 3.20 * eV, 3.23 * eV,
+   3.26 * eV, 3.29 * eV, 3.32 * eV, 3.35 * eV, 3.38 * eV, 3.41 * eV, 3.44 * eV,
+   3.47 * eV
+ };
+
+
+    G4double rindexWater[32] = {
+       1.3435, 1.344,  1.3445, 1.345,  1.3455, 1.346,  1.3465, 1.347,
+       1.3475, 1.348,  1.3485, 1.3492, 1.35,   1.3505, 1.351,  1.3518,
+       1.3522, 1.3530, 1.3535, 1.354,  1.3545, 1.355,  1.3555, 1.356,
+       1.3568, 1.3572, 1.358,  1.3585, 1.359,  1.3595, 1.36,   1.3608
+     };
+
+     G4double abslengthWater[32] = {
+        3.448 * m,  4.082 * m,  6.329 * m,  9.174 * m,  12.346 * m, 13.889 * m,
+        15.152 * m, 17.241 * m, 18.868 * m, 20.000 * m, 26.316 * m, 35.714 * m,
+        45.455 * m, 47.619 * m, 52.632 * m, 52.632 * m, 55.556 * m, 52.632 * m,
+        52.632 * m, 47.619 * m, 45.455 * m, 41.667 * m, 37.037 * m, 33.333 * m,
+        30.000 * m, 28.500 * m, 27.000 * m, 24.500 * m, 22.000 * m, 19.500 * m,
+        17.500 * m, 14.500 * m
+      };
+
+  G4double rindexAir[nEntries] =
+  {1.0003, 1.0003, 1.0003, 1.0003, 1.0003,
+   1.0003, 1.0003, 1.0003, 1.0003, 1.0003,
+   1.0003};
+
+   G4double rindexSteel[nEntries] =
+   {2.75681, 2.75681, 2.75681, 2.75681, 2.75681,
+     2.75681, 2.75681, 2.75681, 2.75681, 2.75681,
+     2.75681};
+
+   G4double reflectivitySteel[nEntries] =
+   {0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6};
+
+
+     G4double rindexPoly[nEntries] =
+     {1.5, 1.5, 1.5, 1.5, 1.5,
+      1.5, 1.5, 1.5, 1.5, 1.5,
+      1.5};
+
+
+//--------------------------WLS-PROPERTIES---------------------------------
+
+    std::vector<G4double> energySmall = { 2.0 * eV, 3.47 * eV };
+
+    std::vector<G4double> refractiveIndexWLSfiber = { 1.60, 1.60 };
+
+   std::vector<G4double> absWLSfiber = {
+     5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m,
+     5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m,
+     5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m,
+     5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m, 5.40 * m,
+     5.40 * m, 1.10 * m, 1.10 * m, 1.10 * m, 1.10 * m, 1.10 * m, 1.10 * m,
+     1.10 * m, 1. * mm,  1. * mm,  1. * mm,  1. * mm,  1. * mm,  1. * mm,
+     1. * mm,  1. * mm,  1. * mm,  1. * mm,  1. * mm,  1. * mm,  1. * mm,
+     1. * mm
+   };
+
+   std::vector<G4double> emissionFib = {
+     0.05, 0.10, 0.30, 0.50, 0.75, 1.00, 1.50, 1.85, 2.30, 2.75,
+     3.25, 3.80, 4.50, 5.20, 6.00, 7.00, 8.50, 9.50, 11.1, 12.4,
+     12.9, 13.0, 12.8, 12.3, 11.1, 11.0, 12.0, 11.0, 17.0, 16.9,
+     15.0, 9.00, 2.50, 1.00, 0.05, 0.00, 0.00, 0.00, 0.00, 0.00,
+     0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00
+   };
+
+   // Add entries into properties table
+   G4MaterialPropertiesTable* mptWLSfiber = new G4MaterialPropertiesTable();
+   mptWLSfiber->AddProperty("RINDEX", energySmall, refractiveIndexWLSfiber);
+   mptWLSfiber->AddProperty("WLSABSLENGTH", WLSenergy, absWLSfiber);
+   mptWLSfiber->AddProperty("WLSCOMPONENT", WLSenergy, emissionFib);
+   mptWLSfiber->AddConstProperty("WLSTIMECONSTANT", 0.5 * ns);
+
+   PMMA->SetMaterialPropertiesTable(mptWLSfiber);
+
+//--------------------------POLYETHYLENE---------------------------------
+
+    Polyethylene = new G4Material("Polyethylene", 0.96*g/cm3, 2); //defining material object
+    Polyethylene->AddElement(nist->FindOrBuildElement("H"), 2); //adding the hydrogen element to object
+    Polyethylene->AddElement(nist->FindOrBuildElement("C"), 1); //adding the Carbon element to object
+
+    G4MaterialPropertiesTable *mptPoly= new G4MaterialPropertiesTable(); //creating properites object for air
+    mptPoly->AddProperty("RINDEX", photonEnergy, rindexPoly, nEntries); //adding property to object
+
+    Polyethylene->SetMaterialPropertiesTable(mptPoly); //assigning properties object to world material object
+
+
+//--------------------------STEEL-TANK---------------------------------
+
+Steel = new G4Material("Steel", 8*g/cm3, 3); //defining material object
+Steel->AddElement(nist->FindOrBuildElement("Cr"), 18);
+Steel->AddElement(nist->FindOrBuildElement("Fe"), 74);
+Steel->AddElement(nist->FindOrBuildElement("Ni"), 8);
+
+G4MaterialPropertiesTable *mptSteel= new G4MaterialPropertiesTable(); //creating properites object for air
+mptSteel->AddProperty("RINDEX", photonEnergy, rindexSteel, nEntries); //adding property to object
+
+Steel->SetMaterialPropertiesTable(mptSteel); //assigning properties object to world material object
+
+
+//--------------------------WATER---------------------------------
+
+	//Water = nist->FindOrBuildMaterial("G4_WATER"); //createing the world material (air)
+
+  Water = new G4Material("Water",1.000*g/cm3, 2);
+  Water->AddElement(nist->FindOrBuildElement("H"), 2);
+  Water->AddElement(nist->FindOrBuildElement("O"), 1);
+
+
+	G4MaterialPropertiesTable *mptWater= new G4MaterialPropertiesTable(); //creating properites object for air
+	mptWater->AddProperty("RINDEX", photonEnergyWater, rindexWater, 32); //adding property to object
+  mptWater->AddProperty("ABSLENGTH", photonEnergyWater, abslengthWater, 32);
+
+	Water->SetMaterialPropertiesTable(mptWater); //assigning properties object to world material object
+
+//--------------------------AIR---------------------------------
+
+    Air = nist->FindOrBuildMaterial("G4_AIR");
+
+    G4MaterialPropertiesTable *mptAir = new G4MaterialPropertiesTable();
+    mptAir->AddProperty("RINDEX", photonEnergy, rindexAir, nEntries);
+
+    Air->SetMaterialPropertiesTable(mptAir);
+
+//--------------------------MIRROR-PROPERTIES---------------------------------
+
+	mirrorSurface = new G4OpticalSurface("mirrorSurface");
+
+    mirrorSurface->SetType(dielectric_metal);
+    mirrorSurface->SetFinish(polished);
+    mirrorSurface->SetModel(unified);
+
+    G4double reflectivity[nEntries] =
+    {0.92, 0.92, 0.92, 0.92, 0.92, 0.90, 0.82, 0.70, 0.70, 0.70, 0.63};
+
+
+    G4MaterialPropertiesTable *mptMirror = new G4MaterialPropertiesTable();
+    mptMirror->AddProperty("REFLECTIVITY", photonEnergy, reflectivity, nEntries);
+
+    mirrorSurface->SetMaterialPropertiesTable(mptMirror);
+}
+
+void MyDetectorConstruction::ConstructWLS()
+{
+
+	G4RotationMatrix* Rotation = new G4RotationMatrix();
+	Rotation->rotateX(90*deg);
+
+//--------------------------PMT---------------------------------
+
+//SPHERE
+
+	solidPMTSphere = new G4Sphere("solidPMTSphere", 0.,0.0635*m, 0., 2*pi, 0., 0.5*pi);  //setting the dimensions for the detectors
+
+	logicPMTSphere = new G4LogicalVolume(solidPMTSphere, Air, "logicPMTSphere"); //creating the detectors, with same material as world
+
+	physPMTSphere = new G4PVPlacement(Rotation, G4ThreeVector(0., -0.5*m, 0.), logicPMTSphere, "physPMTSphere", logicWorld, false, 0, true);
+
+
+//--------------------------WLS---------------------------------
+
+	//solidWLS = new G4Box("solidWLSBox", 0.49*m, 0.01*m, 0.49*m);
+  G4VSolid* solidWLS1 = new G4Box("solidWLSBox1", 0.245*m, 0.01*m, 0.0635*m);
+  G4VSolid* solidWLS2 = new G4Box("solidWLSBox2", 0.245*m, 0.01*m, 0.0635*m);
+  G4VSolid* solidWLS3 = new G4Box("solidWLSBox3", 0.0635*m, 0.01*m, 0.245*m);
+  G4VSolid* solidWLS4 = new G4Box("solidWLSBox4", 0.0635*m, 0.01*m, 0.245*m);
+
+  G4VSolid* WLS1 = new G4SubtractionSolid("WLS-pmt1", solidWLS1, solidPMTSphere, Rotation, G4ThreeVector(-0.245*m, -0.01*m, 0.));
+  G4VSolid* WLS2 = new G4SubtractionSolid("WLS-pmt2", solidWLS2, solidPMTSphere, Rotation, G4ThreeVector(0.245*m, -0.01*m, 0.));
+  G4VSolid* WLS3 = new G4SubtractionSolid("WLS-pmt3", solidWLS3, solidPMTSphere, Rotation, G4ThreeVector(0., -0.01*m, -0.245*m));
+  G4VSolid* WLS4 = new G4SubtractionSolid("WLS-pmt4", solidWLS4, solidPMTSphere, Rotation, G4ThreeVector(0., -0.01*m, 0.245*m));
+
+  G4LogicalVolume* logicWLS1 = new G4LogicalVolume(WLS1, PMMA, "logicWLS1");
+  G4LogicalVolume* logicWLS2 = new G4LogicalVolume(WLS2, PMMA, "logicWLS2");
+  G4LogicalVolume* logicWLS3 = new G4LogicalVolume(WLS3, PMMA, "logicWLS3");
+  G4LogicalVolume* logicWLS4 = new G4LogicalVolume(WLS4, PMMA, "logicWLS4");
+
+  G4VPhysicalVolume* physWLS1 = new G4PVPlacement(0, G4ThreeVector(0.245*m, -0.5*m + 0.01*m, 0.), logicWLS1, "physWLS1", logicWorld, false, 0, true); //placing radiator into world volume
+  G4VPhysicalVolume* physWLS2 = new G4PVPlacement(0, G4ThreeVector(-0.245*m, -0.5*m + 0.01*m, 0.), logicWLS2, "physWLS2", logicWorld, false, 0, true); //placing radiator into world volume
+  //G4VPhysicalVolume* physWLS3 = new G4PVPlacement(0, G4ThreeVector(0., -0.5*m + 0.02*m, 0.245*m), logicWLS3, "physWLS3", logicWorld, false, 0, true); //placing radiator into world volume
+  //G4VPhysicalVolume* physWLS4 = new G4PVPlacement(0, G4ThreeVector(0., -0.5*m + 0.02*m, -0.245*m), logicWLS4, "physWLS4", logicWorld, false, 0, true); //placing radiator into world volume
+
+
+  fScoringVolume = logicWLS;
+
+
+
+
+//--------------------------MIRROR---------------------------------
+
+  solidMirror = new G4Box("solidMirror", xWorld, yWorld, zWorld);  //setting the dimensions for the tank
+  G4VSolid* solidMirror2 = new G4Box("solidMirror2", 0.49*m, 0.005*m, 0.01*m);  //setting the dimensions for the tank
+  G4VSolid* solidMirror3 = new G4Box("solidMirror3", 0.49*m, 0.005*m, 0.01*m);  //setting the dimensions for the tank
+
+	solidMirrorBox = new G4Box("solidMirrorBox", xWorld-0.01*m, yWorld-0.01*m, zWorld-0.01*m);
+
+  G4VSolid* mirrorSubtract    = new G4SubtractionSolid("mirror-box", solidMirror, solidMirrorBox, 0, G4ThreeVector(0., 0., 0.));
+  G4VSolid* mirror = new G4SubtractionSolid("mirror-pmt", mirrorSubtract, solidPMTSphere, Rotation, G4ThreeVector(0., -0.5*m, 0.));
+  G4VSolid* mirror2 = new G4SubtractionSolid("mirror-WLS", mirror, WLS1, 0, G4ThreeVector(0.245*m, -0.5*m + 0.01*m, 0.));
+  G4VSolid* mirror3 = new G4SubtractionSolid("mirror-WLS", mirror2, WLS2, 0, G4ThreeVector(-0.245*m, -0.5*m + 0.01*m, 0.));
+
+  logicMirror = new G4LogicalVolume(mirror3, Polyethylene, "logicMirror"); //creating the detectors, with same material as world
+  G4LogicalVolume* logicMirror2 = new G4LogicalVolume(solidMirror2, Polyethylene, "logicMirror2"); //creating the detectors, with same material as world
+  G4LogicalVolume* logicMirror3 = new G4LogicalVolume(solidMirror3, Polyethylene, "logicMirror3"); //creating the detectors, with same material as world
+
+	physMirror = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicMirror, "physMirror", logicWorld, false, 0, true);
+  G4PVPlacement* physMirror2 = new G4PVPlacement(0, G4ThreeVector(0., -0.485*m, 0.0635*m + 0.01*m), logicMirror2, "physMirror2", logicWorld, false, 0, true);
+  G4PVPlacement* physMirror3 = new G4PVPlacement(0, G4ThreeVector(0., -0.485*m , -0.0635*m - 0.01*m), logicMirror3, "physMirror3", logicWorld, false, 0, true);
+
+  G4LogicalSkinSurface *skin = new G4LogicalSkinSurface("skin", logicMirror, mirrorSurface);
+  G4LogicalSkinSurface *skin2 = new G4LogicalSkinSurface("skin", logicMirror2, mirrorSurface);
+  G4LogicalSkinSurface *skin3 = new G4LogicalSkinSurface("skin", logicMirror3, mirrorSurface);
+
+}
+
+
+//--------------------------WORLD-VOLUME---------------------------------
+
+G4VPhysicalVolume *MyDetectorConstruction::Construct()
+{
+
+    solidWorld = new G4Box("solidWorld", xWorld, yWorld, zWorld); //setting up world volume as a box
+
+	logicWorld = new G4LogicalVolume(solidWorld, Water, "logicWorld"); //creating the world as dimensions from box and material
+
+	physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWorld", 0, false, 0, true); //placing the world into geant 4 sim
+
+    ConstructWLS();
+
+	return physWorld; //returning the world, including everything inside
+}
+
+
+
+//--------------------------SENSITIVE-DETECORS---------------------------------
+
+void MyDetectorConstruction::ConstructSDandField()
+{
+
+    MySensitiveDetector *sensDet = new MySensitiveDetector("SensitiveDetector"); //creating a sensitive detector object
+
+
+    if(logicPMTSphere != NULL)
+        logicPMTSphere->SetSensitiveDetector(sensDet); //assigning the detectors as senstive detectors (it generates a hit when a track traverses its volume)s
+
+
+
+}
