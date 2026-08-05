@@ -11,13 +11,14 @@ MyPhysicsList::MyPhysicsList()
 
     auto opticalParams = G4OpticalParameters::Instance();
     opticalParams->SetBoundaryInvokeSD(true);
-    opticalParams->SetWLSTimeProfile("delta");
+    opticalParams->SetWLSTimeProfile("exponential");
 
     G4Cerenkov* theCerenkovProcess = new G4Cerenkov("Cerenkov");
     theCerenkovProcess->SetTrackSecondariesFirst(true);
     G4int MaxNumPhotons = 300;
     theCerenkovProcess->SetMaxNumPhotonsPerStep(MaxNumPhotons);
     theCerenkovProcess->SetMaxBetaChangePerStep(10.0);
+    
 }
 
 MyPhysicsList::~MyPhysicsList()

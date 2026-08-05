@@ -1,0 +1,28 @@
+/myDet/wlsThickness 7.0 mm
+
+/myDet/wlsSize 200.0 mm
+/run/beamOn 100
+
+/myDet/wlsSize 250.0 mm
+/run/beamOn 100
+
+/myDet/wlsSize 300.0 mm
+/run/beamOn 100
+
+/myDet/wlsSize 350.0 mm
+/run/beamOn 100
+
+/myDet/wlsSize 400.0 mm
+/run/beamOn 100
+
+/myDet/wlsSize 450.0 mm
+/run/beamOn 100
+
+/myDet/wlsSize 500.0 mm
+/run/beamOn 100
+
+/myDet/wlsSize 550.0 mm
+/run/beamOn 100
+
+/myDet/wlsSize 600.0 mm
+/run/beamOn 100

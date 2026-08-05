@@ -8,6 +8,8 @@
 #include "G4VPrimaryGenerator.hh"
 #include "G4MuonPlus.hh"
 #include "Randomize.hh"
+#include "G4AnalysisManager.hh"
+#include <cmath>
 
 MyPrimaryGenerator::MyPrimaryGenerator()
 : G4VUserPrimaryGeneratorAction(),
@@ -29,30 +31,52 @@ MyPrimaryGenerator::~MyPrimaryGenerator()
 
 void MyPrimaryGenerator::GeneratePrimaries(G4Event* anEvent)
 {
-  // Define the particle's energy
   G4double energy = 1.0 * GeV;
   
-  // Set the direction to be vertically downwards along the Y-axis
-  G4ThreeVector direction = G4ThreeVector(0.0, -1.0, 0.0);
+  // Define the 2D surface area for injection (assuming a 3.8m x 3.8m tank top)
+  G4double worldHalfX = 1.9 * m; 
+  G4double worldHalfZ = 1.9 * m; // Added for the Z-axis spread
+  G4double yPos = 0.499 * m; 
+
+  // 1. RANDOMIZE 2D POSITION (The "Rainfall" Model)
+
+  G4double xPos = -worldHalfX + 2.0 * worldHalfX * G4UniformRand();
+  G4double zPos = -worldHalfZ + 2.0 * worldHalfZ * G4UniformRand();
+
+  // 2. ANGULAR DISTRIBUTION
+  G4double u = G4UniformRand(); 
   
-  // Define the starting position
-  // A safe practice is to get the world volume size from the detector construction.
-  // For this example, we assume a world half-height of at least 1 meter in Y.
-  G4double worldYHalfLength = 1.0 * m; // Replace with your actual world half-height
+  G4double cosTheta = std::pow(u, 1.0/3.0); 
+  G4double sinTheta = std::sqrt(1.0 - cosTheta * cosTheta);
+  
+  // Uniform azimuthal angle (0 to 2*pi)
+  G4double phi = G4UniformRand() * CLHEP::twopi; 
+  
+  // Map to Cartesian coordinates
+  G4double dirX = sinTheta * std::cos(phi);
+  G4double dirZ = sinTheta * std::sin(phi);
+  G4double dirY = -cosTheta; 
+  
+  G4ThreeVector direction(dirX, dirY, dirZ);
 
-  // Set the position on the X-Z plane
-  G4double xPos = 0.25 * m;
-  G4double zPos = 0.0 * m;
-  // Set the height to be at the top of the world in the Y direction
-  G4double yPos = worldYHalfLength; 
+  // 3. RECORD TO NTUPLE
+  G4int eventID = anEvent->GetEventID();
+  G4AnalysisManager* man = G4AnalysisManager::Instance();
+  
+  man->FillNtupleIColumn(2, 0, eventID);          // fEvent
+  man->FillNtupleDColumn(2, 1, xPos);             // fX
+  man->FillNtupleDColumn(2, 2, yPos);             // fY
+  man->FillNtupleDColumn(2, 3, zPos);             // fZ
+  man->FillNtupleDColumn(2, 4, direction.x());    // fXMom
+  man->FillNtupleDColumn(2, 5, direction.y());    // fYMom
+  man->FillNtupleDColumn(2, 6, direction.z());    // fZMom
+  man->FillNtupleDColumn(2, 7, direction.theta());// ftheta
+  man->FillNtupleDColumn(2, 8, direction.phi());  // fphi
+  man->AddNtupleRow(2); 
 
-  G4ThreeVector position = G4ThreeVector(xPos, yPos, zPos);
-
-  // Set the particle's properties
+  // 4. GENERATE PARTICLE
   fParticleGun->SetParticleEnergy(energy);
   fParticleGun->SetParticleMomentumDirection(direction);
-  fParticleGun->SetParticlePosition(position);
-
-  // Generate the primary vertex
+  fParticleGun->SetParticlePosition(G4ThreeVector(xPos, yPos, zPos));
   fParticleGun->GeneratePrimaryVertex(anEvent);
 }

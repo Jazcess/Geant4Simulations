@@ -1,0 +1,5 @@
+# Set the thickness using the variable from the inner loop
+/myDet/wlsThickness {thick_var} mm
+
+# Run the simulation
+/run/beamOn 5000

@@ -14,6 +14,8 @@
 #include "G4OpRayleigh.hh"
 #include "G4OpAbsorption.hh"
 #include "G4OpBoundaryProcess.hh"
+#include "G4OpticalPhoton.hh"
+#include "G4ProcessManager.hh"
 
 
 

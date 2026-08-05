@@ -1,180 +1,191 @@
 #include "stepping.hh"
-#include "event.hh" // Assuming event.hh contains MyEventAction
+#include "event.hh"
 #include "G4MuonPlus.hh"
 #include "G4MuonMinus.hh"
+#include "G4Gamma.hh"
+#include "G4OpticalPhoton.hh"
 #include "G4RunManager.hh"
 #include "G4AnalysisManager.hh"
 #include "G4ParticleTable.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4OpBoundaryProcess.hh"
+#include "G4ProcessManager.hh"
 
-MySteppingAction::MySteppingAction(MyEventAction *eventAction)
-{
-    fEventAction = eventAction;
+G4OpBoundaryProcess* GetBoundaryProcess(const G4ParticleDefinition* particleDef) {
+    G4ProcessManager* pManager = particleDef->GetProcessManager();
+    G4int pVectorLength = pManager->GetProcessListLength();
+    G4ProcessVector* pVector = pManager->GetProcessList();
+    for (G4int i = 0; i < pVectorLength; i++) {
+        if ((*pVector)[i]->GetProcessName() == "OpBoundary") {
+            return (G4OpBoundaryProcess*)(*pVector)[i];
+        }
+    }
+    return nullptr;
 }
+
+inline G4double CalculateWavelength(const G4ThreeVector& momentum)
+{
+    return (1.239841939 * eV / momentum.mag()) * 1E+03; 
+}
+
+MySteppingAction::MySteppingAction(MyEventAction *eventAction) : fEventAction(eventAction)
+{}
 
 MySteppingAction::~MySteppingAction()
 {}
 
 void MySteppingAction::UserSteppingAction(const G4Step *step)
 {
-    // Get the particle type from the track
     const G4Track* track = step->GetTrack();
     const G4ParticleDefinition* particleDef = track->GetDefinition();
-    G4int trackID = track->GetTrackID(); // Changed from photonID for clarity
-    G4StepPoint* postStepPoint = step->GetPostStepPoint();
-    const G4VProcess* process = postStepPoint->GetProcessDefinedStep();
-    G4StepPoint* preStepPoint = step->GetPreStepPoint();
-    G4String processName = process ? process->GetProcessName() : "Unknown";
-                
-    // Get the physical volume of the current and post step
-    G4VPhysicalVolume* preVolume = preStepPoint->GetPhysicalVolume();
-    G4VPhysicalVolume* postVolume = postStepPoint->GetPhysicalVolume();
 
-    G4int preVolumeID  = preVolume->GetCopyNo();
-    G4int postVolumeID = postVolume ? postVolume->GetCopyNo() : -1;
-
-    G4int parentID = track->GetParentID();
-
-    G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
-    G4ParticleDefinition *muon = particleTable->FindParticle("mu+");
-    G4ParticleDefinition *gamma = particleTable->FindParticle("gamma");
-
-
-
-    // Check if the particle is a muon
     if (particleDef == G4MuonPlus::Definition() || particleDef == G4MuonMinus::Definition())
     {
-        G4double edep = step->GetTotalEnergyDeposit();
-        fEventAction->AddEdep(edep);
+        fEventAction->AddEdep(step->GetTotalEnergyDeposit());
+        return; 
     }
 
-    // Cherenkov photon generation tracking
-    if (track->GetCreatorProcess() && track->GetCreatorProcess()->GetProcessName() == "Cerenkov") {
+    if (particleDef == G4Gamma::GammaDefinition() || particleDef == G4OpticalPhoton::OpticalPhotonDefinition())
+    {
+        G4int trackID = track->GetTrackID(); 
+        G4int parentID = track->GetParentID();
+        G4StepPoint* preStepPoint = step->GetPreStepPoint();
+        G4StepPoint* postStepPoint = step->GetPostStepPoint();
+        
+        G4VPhysicalVolume* preVolume = preStepPoint->GetPhysicalVolume();
+        G4int preVolumeID = preVolume->GetCopyNo();
+        
+        G4AnalysisManager *man = G4AnalysisManager::Instance();
+        G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
 
-        // Only record if this photon has not been recorded yet
-        if (fEventAction->recordedPhotonIDs.find(trackID) == fEventAction->recordedPhotonIDs.end()) {
-
-            fEventAction->recordedPhotonIDs.insert(trackID);
-
+        if (track->GetCurrentStepNumber() == 1 && track->GetCreatorProcess() && track->GetCreatorProcess()->GetProcessName() == "Cerenkov") {
             G4ThreeVector origPos = preStepPoint->GetPosition();
-            // Calculate the photon wavelength
-            G4double wlen = (1.239841939 * eV / preStepPoint->GetMomentum().mag()) * 1E+03;
-
-            // Fill the ntuple with Cherenkov photon data
-            G4AnalysisManager *man = G4AnalysisManager::Instance();
-            G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
-            man->FillNtupleIColumn(1, 0, evt);           // Event ID
-            man->FillNtupleIColumn(1, 1, trackID);       // Unique Photon ID
-            man->FillNtupleIColumn(1, 2, preVolumeID);   // Chamber ID (1 or 2)
-            man->FillNtupleDColumn(1, 3, origPos.x());   // Photon X position
-            man->FillNtupleDColumn(1, 4, origPos.y());   // Photon Y position
-            man->FillNtupleDColumn(1, 5, origPos.z());   // Photon Z position
-            man->FillNtupleDColumn(1, 6, wlen);          // Photon wavelength
-            man->AddNtupleRow(1);                        // Add row to ntuple
-        }
-    }
-
-
-    // Check if the particle is a photon
-    if (particleDef == gamma || particleDef->GetParticleName() == "opticalphoton"){
-
-        // Check if the photon is absorbed or involved in WLS
-        if (processName == "OpAbsorption" || processName == "OpWLS") {
-
-            // Record absorption if the track is killed
-            if (track->GetTrackStatus() == fStopAndKill){
-
-                G4ThreeVector position = postStepPoint->GetPosition();
-                G4double wlen = (1.239841939 * eV / preStepPoint->GetMomentum().mag()) * 1E+03;
-
-                G4AnalysisManager *man = G4AnalysisManager::Instance();
-                G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
-                man->FillNtupleIColumn(3, 0, evt);        // Event ID
-                man->FillNtupleIColumn(3, 1, trackID);    // Unique Photon ID
-                man->FillNtupleIColumn(3, 2, preVolumeID);
-                man->FillNtupleDColumn(3, 3, position.x());
-                man->FillNtupleDColumn(3, 4, position.y());
-                man->FillNtupleDColumn(3, 5, position.z());
-                man->FillNtupleDColumn(3, 6, wlen);
-                man->AddNtupleRow(3);
-            }
-
-            // Check if a new photon was created (re-emitted via WLS)
-            const std::vector<const G4Track*>* secondaries = step->GetSecondaryInCurrentStep();
-            for (const auto* secondaryTrack : *secondaries) {
-                if (secondaryTrack->GetDefinition()->GetParticleName() == "opticalphoton") {
-                    // The original photon is the parent
-                    fEventAction->wlsParentIDs.insert(trackID);
-
-                    // Record emission data
-                    G4ThreeVector position = secondaryTrack->GetPosition();
-                    G4double wlen = (1.239841939 * eV / secondaryTrack->GetMomentum().mag()) * 1E+03;
-
-                    G4AnalysisManager *man = G4AnalysisManager::Instance();
-                    G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
-                    man->FillNtupleIColumn(4, 0, evt);           // Event ID
-                    man->FillNtupleIColumn(4, 1, trackID);       // Unique Photon ID of the parent
-                    man->FillNtupleIColumn(4, 2, preVolumeID);
-                    man->FillNtupleDColumn(4, 3, position.x());
-                    man->FillNtupleDColumn(4, 4, position.y());
-                    man->FillNtupleDColumn(4, 5, position.z());
-                    man->FillNtupleDColumn(4, 6, wlen);
-                    man->AddNtupleRow(4);
-                }
-            }
+            man->FillNtupleIColumn(1, 0, evt);      
+            man->FillNtupleIColumn(1, 1, trackID);      
+            man->FillNtupleIColumn(1, 2, preVolumeID);  
+            man->FillNtupleDColumn(1, 3, origPos.x());  
+            man->FillNtupleDColumn(1, 4, origPos.y());  
+            man->FillNtupleDColumn(1, 5, origPos.z());  
+            man->FillNtupleDColumn(1, 6, CalculateWavelength(preStepPoint->GetMomentum()));
+            man->FillNtupleDColumn(1, 7, preStepPoint->GetGlobalTime()); 
+            man->AddNtupleRow(1);                       
         }
 
-        // Is this photon a WLS secondary?
-        if (fEventAction->wlsParentIDs.find(parentID) != fEventAction->wlsParentIDs.end()) {
-            // This photon originated from a WLS emission
-
-            // Photon stopped
-            if (track->GetTrackStatus() == fStopAndKill) {
-
-                if (process) {
-                    G4ThreeVector pos = postStepPoint->GetPosition();
-                    G4double wlen = (1.239841939 * eV / preStepPoint->GetMomentum().mag()) * 1E+03;
-
-                    G4AnalysisManager *man = G4AnalysisManager::Instance();
-                    G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
-   
-                    // Fill ntuple for WLS photons (Ntuple 6)
-                    man->FillNtupleIColumn(6, 0, evt);           // Event ID
-                    man->FillNtupleIColumn(6, 1, parentID);      // Parent photon ID
-                    man->FillNtupleIColumn(6, 2, trackID);       // Photon ID
-                    man->FillNtupleIColumn(6, 3, postVolumeID);  // Volume ID where it died
-                    man->FillNtupleDColumn(6, 4, pos.x());
-                    man->FillNtupleDColumn(6, 5, pos.y());
-                    man->FillNtupleDColumn(6, 6, pos.z());
-                    man->FillNtupleDColumn(6, 7, wlen);
-                    man->FillNtupleSColumn(6, 8, processName);   // Store process that killed photon
-                    man->AddNtupleRow(6);
+        if (postStepPoint->GetStepStatus() == fGeomBoundary) {
+            static G4OpBoundaryProcess* boundaryProc = GetBoundaryProcess(particleDef);
+            
+            if (boundaryProc) {
+                G4OpBoundaryProcessStatus status = boundaryProc->GetStatus();
+                if (status == TotalInternalReflection || status == FresnelReflection || 
+                    status == SpikeReflection || status == LambertianReflection) {
+                    fEventAction->reflectionRef[trackID]++;
                 }
+            }
 
-                // Check if it died outside of WLS volume (escaped)
-                if (postVolume && postVolume->GetName() != "physWLS") {
-
-                    if (preVolume != postVolume) {
-                        G4ThreeVector position = postStepPoint->GetPosition();
-                        G4double wlen = (1.239841939 * eV / preStepPoint->GetMomentum().mag()) * 1E+03;
-
-                        G4AnalysisManager *man = G4AnalysisManager::Instance();
-                        G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
-                        // Ntuple for escaped WLS photons (Ntuple 5)
-                        man->FillNtupleIColumn(5, 0, evt);           // Event ID
-                        man->FillNtupleIColumn(5, 1, parentID);      // Unique Parent ID
-                        man->FillNtupleIColumn(5, 2, trackID);       // Unique Photon ID
-                        man->FillNtupleIColumn(5, 3, postVolumeID);  // ID of volume photon was killed in
-                        man->FillNtupleDColumn(5, 4, position.x());
-                        man->FillNtupleDColumn(5, 5, position.y());
-                        man->FillNtupleDColumn(5, 6, position.z());
-                        man->FillNtupleDColumn(5, 7, wlen);
-                        man->AddNtupleRow(5);
+            if (fEventAction->wlsParentIDs.count(parentID)) {
+                G4VPhysicalVolume* postVolume = postStepPoint->GetPhysicalVolume();
+                if (postVolume) {
+                    if (preVolume->GetName() == "physWLS" && postVolume->GetName() == "physWater") {
+                        if (fEventAction->firstEscapePositions.find(trackID) == fEventAction->firstEscapePositions.end()) {
+                            fEventAction->firstEscapePositions[trackID] = postStepPoint->GetPosition(); 
+                            fEventAction->firstEscapeMomentums[trackID] = postStepPoint->GetMomentumDirection();
+                        }
+                        fEventAction->photonsOutsideWLS.insert(trackID);
+                    } 
+                    else if (preVolume->GetName() != "physWLS" && postVolume->GetName() == "physWLS") {
+                        fEventAction->photonsOutsideWLS.erase(trackID);
                     }
+                }
+            }
+        }
+
+        if (track->GetTrackStatus() == fStopAndKill) {
+            const G4VProcess* process = postStepPoint->GetProcessDefinedStep();
+            G4String processName = process ? process->GetProcessName() : "Unknown";
+            G4VPhysicalVolume* postVolume = postStepPoint->GetPhysicalVolume();
+            G4int postVolumeID = postVolume ? postVolume->GetCopyNo() : -1;
+            
+            G4ThreeVector pos = postStepPoint->GetPosition();
+            G4double wlen = CalculateWavelength(preStepPoint->GetMomentum());
+            G4int reflCount = fEventAction->reflectionRef[trackID];
+            G4double globalTime = postStepPoint->GetGlobalTime();
+
+            if (processName == "OpAbsorption" || processName == "OpWLS") {
+                man->FillNtupleIColumn(3, 0, evt);      
+                man->FillNtupleIColumn(3, 1, trackID);    
+                man->FillNtupleIColumn(3, 2, preVolumeID);
+                man->FillNtupleIColumn(3, 3, postVolumeID);
+                man->FillNtupleDColumn(3, 4, pos.x());
+                man->FillNtupleDColumn(3, 5, pos.y());
+                man->FillNtupleDColumn(3, 6, pos.z());
+                man->FillNtupleDColumn(3, 7, wlen);
+                man->FillNtupleIColumn(3, 8, reflCount);
+                man->FillNtupleDColumn(3, 9, globalTime); 
+                man->AddNtupleRow(3);
+
+                const std::vector<const G4Track*>* secondaries = step->GetSecondaryInCurrentStep();
+                for (const auto* secondaryTrack : *secondaries) {
+                    if (secondaryTrack->GetDefinition() == G4OpticalPhoton::OpticalPhotonDefinition()) {
+                        fEventAction->wlsParentIDs.insert(trackID);
+                        G4ThreeVector secPos = secondaryTrack->GetPosition();
+                        man->FillNtupleIColumn(4, 0, evt);          
+                        man->FillNtupleIColumn(4, 1, secondaryTrack->GetTrackID());      
+                        man->FillNtupleIColumn(4, 2, preVolumeID);
+                        man->FillNtupleIColumn(4, 3, postVolumeID);
+                        man->FillNtupleDColumn(4, 4, secPos.x());
+                        man->FillNtupleDColumn(4, 5, secPos.y());
+                        man->FillNtupleDColumn(4, 6, secPos.z());
+                        man->FillNtupleDColumn(4, 7, CalculateWavelength(secondaryTrack->GetMomentum()));
+                        man->FillNtupleDColumn(4, 8, secondaryTrack->GetGlobalTime()); 
+                        man->AddNtupleRow(4);
+                    }
+                }
+            }
+
+            if (fEventAction->wlsParentIDs.count(parentID)) {
+                if (fEventAction->photonsOutsideWLS.count(trackID)) {
+                    if (fEventAction->firstEscapePositions.count(trackID)) {
+                        G4ThreeVector escapePos = fEventAction->firstEscapePositions[trackID];
+                        G4ThreeVector escapeMom = fEventAction->firstEscapeMomentums[trackID];
+                        
+                        man->FillNtupleIColumn(5, 0, evt);      
+                        man->FillNtupleIColumn(5, 1, parentID);     
+                        man->FillNtupleIColumn(5, 2, trackID);      
+                        man->FillNtupleIColumn(5, 3, preVolumeID); 
+                        man->FillNtupleIColumn(5, 4, postVolumeID); 
+                        man->FillNtupleDColumn(5, 5, escapePos.x());
+                        man->FillNtupleDColumn(5, 6, escapePos.y());
+                        man->FillNtupleDColumn(5, 7, escapePos.z());
+                        man->FillNtupleDColumn(5, 8, escapeMom.x());
+                        man->FillNtupleDColumn(5, 9, escapeMom.y());
+                        man->FillNtupleDColumn(5, 10, escapeMom.z());
+                        man->FillNtupleDColumn(5, 11, wlen);
+                        man->FillNtupleIColumn(5, 12, reflCount); 
+                        man->FillNtupleDColumn(5, 13, globalTime);
+                        man->AddNtupleRow(5);
+
+                        fEventAction->photonsOutsideWLS.erase(trackID);
+                        fEventAction->firstEscapePositions.erase(trackID); 
+                        fEventAction->firstEscapeMomentums.erase(trackID); 
+                    }
+                }
+                
+                if (process) {
+                    man->FillNtupleIColumn(6, 0, evt);          
+                    man->FillNtupleIColumn(6, 1, parentID);     
+                    man->FillNtupleIColumn(6, 2, trackID);      
+                    man->FillNtupleIColumn(6, 3, preVolumeID);
+                    man->FillNtupleIColumn(6, 4, postVolumeID);
+                    man->FillNtupleDColumn(6, 5, pos.x());      
+                    man->FillNtupleDColumn(6, 6, pos.y());
+                    man->FillNtupleDColumn(6, 7, pos.z());
+                    man->FillNtupleDColumn(6, 8, wlen);
+                    man->FillNtupleSColumn(6, 9, processName);
+                    man->FillNtupleIColumn(6, 10, reflCount);
+                    man->FillNtupleDColumn(6, 11, globalTime); 
+                    man->AddNtupleRow(6);
                 }
             }
         }
     }
 }
-

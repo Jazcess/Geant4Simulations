@@ -1,0 +1,3 @@
+/myDet/wlsSize {len} mm
+#/myDet/wlsThickness {len} mm
+/run/beamOn 100

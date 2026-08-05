@@ -2,6 +2,7 @@
 #include "construction.hh"
 #include "G4LogicalVolume.hh"
 #include "G4UserLimits.hh"
+#include "G4GenericMessenger.hh"
 #include <vector>
 
 void ReadDataFromFile(const std::string& filename, G4PhysicsFreeVector* vector, G4double unitConversionFactor) {
@@ -19,21 +20,48 @@ void ReadDataFromFile(const std::string& filename, G4PhysicsFreeVector* vector, 
     datafile.close();
 }
 
+//Default Settings for WLS Plate
+G4double MyDetectorConstruction::fWLSSize = 0.45* m;
+G4double MyDetectorConstruction::fWLSThickness = 12.0 * mm; 
+G4double MyDetectorConstruction::fWLSTimeConstant = 0.5 * ns;
+G4double MyDetectorConstruction::fWLSGap = 0.0 * mm;
+
 MyDetectorConstruction::MyDetectorConstruction()
 {
-    xWorld = 0.5*m; //1m
-    yWorld = 0.375*m; //0.75m
-    zWorld = 0.5*m; //1m
+    xWorld = 1.9*m; //3.8m
+    yWorld = 0.5*m; //0.6m
+    zWorld = 1.9*m; //3.8m
 
     wlsAbs = new G4PhysicsFreeVector();
     wlsEmm = new G4PhysicsFreeVector();
     wlsRef = new G4PhysicsFreeVector();
 
+
+    // 2. Define Messenger Commands
+    // We use G4GenericMessenger for concise, clean code
+    fMessenger = new G4GenericMessenger(this, "/myDet/", "Detector Construction Control");
+
+    // "mm" is the default unit if the user forgets to type one in the macro
+    fMessenger->DeclareMethodWithUnit("wlsSize", "mm", 
+                                      &MyDetectorConstruction::SetWLSSize, 
+                                      "Set full WLS XY Size");
+
+    fMessenger->DeclareMethodWithUnit("wlsThickness", "mm", 
+                                      &MyDetectorConstruction::SetWLSThickness, 
+                                      "Set full WLS Thickness");
+
+    fMessenger->DeclareMethodWithUnit("wlsTimeConstant", "ns", 
+                                      &MyDetectorConstruction::SetWLSTimeConstant, 
+                                      "Set WLS Decay Time Constant");
+    
+    fMessenger->DeclareMethodWithUnit("wlsGap", "mm", 
+                                  &MyDetectorConstruction::SetWLSGap, 
+                                  "Set the gap size between PMT and WLS");
+
     // Load WLS optical spectra from file
     ReadDataFromFile("abslength_kuraray.txt", wlsAbs, cm);   // Absorption length (cm -> mm conversion)
     ReadDataFromFile("emission_kuraray_active.txt", wlsEmm, 1.0);   // Emission spectrum (no unit conversion needed)
     ReadDataFromFile("refractive_index_kuraray.txt", wlsRef, 1.0);  // Refractive index (no unit conversion needed)
-
 
     DefineMaterials();
 }
@@ -157,13 +185,19 @@ void MyDetectorConstruction::DefineMaterials()
   PMMA->AddElement(nist->FindOrBuildElement("H"), 8); //adding the hydrogen element to object
   PMMA->AddElement(nist->FindOrBuildElement("C"), 5); //adding the Carbon element to object
 
+//--------------------------PVT-WLS---------------------------------
+
+    G4Material* PVT = new G4Material("PVT", 1.023*g/cm3, 2); // Density matches EJ-200/BC-400 series
+    PVT->AddElement(nist->FindOrBuildElement("H"), 10);      // Hydrogen (10 atoms)
+    PVT->AddElement(nist->FindOrBuildElement("C"), 9);       // Carbon (9 atoms) - Formula C9H10
+
 //--------------------------WLS-PROPERTIES---------------------------------
 
 	G4MaterialPropertiesTable *mptWLS = new G4MaterialPropertiesTable();
-	mptWLS->AddProperty("RINDEX", wlsRef); //adding property to this object
+	mptWLS->AddProperty("RINDEX", wlsRef);
 	mptWLS->AddProperty("WLSABSLENGTH", wlsAbs);
     mptWLS->AddProperty("WLSCOMPONENT", wlsEmm);
-    mptWLS->AddConstProperty("WLSTIMECONSTANT", 3*ns);
+    mptWLS->AddConstProperty("WLSTIMECONSTANT", fWLSTimeConstant);
 
 	PMMA->SetMaterialPropertiesTable(mptWLS);             
 
@@ -231,121 +265,195 @@ void MyDetectorConstruction::DefineMaterials()
     Glass->SetMaterialPropertiesTable(mptGlass); //assigning properties object to world material object
 
 
-//--------------------------MIRROR-PROPERTIES---------------------------------
 
-	mirrorSurface = new G4OpticalSurface("mirrorSurface");
+//--------------------------TYVEK-PROPERTIES---------------------------------
 
-    mirrorSurface->SetType(dielectric_metal);
-    //mirrorSurface->SetFinish(groundfrontpainted);
-    mirrorSurface->SetFinish(polished);
-    mirrorSurface->SetModel(unified);
+	TyvekSurface = new G4OpticalSurface("TyvekSurface");
 
-    //G4double reflectivity[9] =
-    //{0.95, 0.95, 0.95, 0.95, 0.95, 0.95, 0.95, 0.95, 0.95};
-    G4double reflectivity[9] =
-    {1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0};
+    TyvekSurface->SetType(dielectric_dielectric);
+    TyvekSurface->SetFinish(groundfrontpainted);
+    TyvekSurface->SetModel(unified);
 
-    G4double MirrorEnergies[9] = 
-    {1.907, 2.066, 2.254, 2.479, 2.755, 3.099, 3.542, 4.132, 4.959};
+    //std::vector<G4double> mirrorReflectivity(nEntries, 0.98);
+    std::vector<G4double> ones(nEntries, 1.0);
+    std::vector<G4double> zeros(nEntries, 0.0);
+
+    G4double photonEnergyTyvek[9] = { 1.91*eV, 2.07*eV, 2.25*eV, 2.48*eV, 2.75*eV, 3.10*eV, 3.54*eV, 4.13*eV, 4.96*eV };
+    G4double TyvekReflectivity[9] = { 0.92, 0.92, 0.92, 0.92, 0.92, 0.90, 0.82, 0.70, 0.63 };
+
+    TyvekSurface->SetSigmaAlpha(0.17); 
 
     G4double specularLobeConstant[2] ={0.2, 0.2};
     G4double specularLobeConstantEnergies[2] ={1.907, 4.959};
 
+    G4MaterialPropertiesTable *mptTyvek = new G4MaterialPropertiesTable();
+    mptTyvek->AddProperty("REFLECTIVITY", photonEnergyTyvek, TyvekReflectivity, 9);
 
-    G4MaterialPropertiesTable *mptMirror = new G4MaterialPropertiesTable();
-    mptMirror->AddProperty("REFLECTIVITY", MirrorEnergies, reflectivity, 9);
-    //mptMirror->AddProperty("SPECULARLOBECONSTANT", specularLobeConstantEnergies, specularLobeConstant, 2);
+    TyvekSurface->SetMaterialPropertiesTable(mptTyvek);
 
-    mirrorSurface->SetMaterialPropertiesTable(mptMirror);
+//-------------------------SILVER-COATING-WLS----------------------------------
 
+    Silver = nist->FindOrBuildMaterial("G4_Ag");
+
+    SilverCoatingSurface = new G4OpticalSurface("SilverCoatingSurface");
+    SilverCoatingSurface->SetType(dielectric_metal);
+    SilverCoatingSurface->SetFinish(polished);
+    SilverCoatingSurface->SetModel(unified);    
+
+    G4double PhotonEnergyS[11] = {
+    0.62*eV, 0.83*eV, 1.03*eV, 1.24*eV, 1.55*eV, 
+    2.07*eV, 2.48*eV, 3.10*eV, 4.13*eV, 6.20*eV, 12.4*eV}; 
+
+    G4double Refl_Ag[11] = {0.99, 0.99, 0.98, 0.98, 0.97, 0.96, 0.95, 0.90, 0.15, 0.25, 0.10};
+
+    G4MaterialPropertiesTable *mptSilver = new G4MaterialPropertiesTable();
+    mptSilver->AddProperty("REFLECTIVITY", PhotonEnergyS, Refl_Ag, 11);
+    SilverCoatingSurface->SetMaterialPropertiesTable(mptSilver);
+
+//-------------------------ALUMINIUM-COATING-WLS----------------------------------
+
+    Aluminium = nist->FindOrBuildMaterial("G4_Al");
+
+    AluminiumCoatingSurface = new G4OpticalSurface("AluminiumCoatingSurface");
+    AluminiumCoatingSurface->SetType(dielectric_metal);
+    AluminiumCoatingSurface->SetFinish(polished);
+    AluminiumCoatingSurface->SetModel(unified);    
+
+    G4double PhotonEnergyA[11] = {
+    0.62*eV, 0.83*eV, 1.03*eV, 1.24*eV, 1.55*eV, 
+    2.07*eV, 2.48*eV, 3.10*eV, 4.13*eV, 6.20*eV, 12.4*eV}; 
+
+    G4double Refl_Al[11] = {0.98, 0.98, 0.97, 0.95, 0.86, 0.91, 0.92, 0.92, 0.92, 0.92, 0.10};
+
+    G4MaterialPropertiesTable *mptAluminium = new G4MaterialPropertiesTable();
+    mptAluminium->AddProperty("REFLECTIVITY", PhotonEnergyA, Refl_Al, 11);
+    AluminiumCoatingSurface->SetMaterialPropertiesTable(mptAluminium);
+    
+//--------------------------PMT-COUPLING-SURFACE---------------------------------
+
+    pmtCouplingSurface = new G4OpticalSurface("pmtCouplingSurface");
+    
+    // Dielectric-Dielectric allows natural Snell's Law and Fresnel physics
+    pmtCouplingSurface->SetType(dielectric_dielectric); 
+    
+    // Ground allows micro-facet scattering
+    pmtCouplingSurface->SetFinish(polished); 
+    pmtCouplingSurface->SetModel(unified); 
+    
+    // // Set the roughness parameter
+    // pmtCouplingSurface->SetSigmaAlpha(0.2); 
+
+    G4MaterialPropertiesTable *mptPMTCoupling = new G4MaterialPropertiesTable();
+    
+    // Define the UNIFIED model probabilities (MUST sum to 1.0)
+    // This tells Geant4 to use the sigma_alpha micro-facets for reflections
+    mptPMTCoupling->AddConstProperty("SPECULARLOBECONSTANT",  1.0, true); 
+    mptPMTCoupling->AddConstProperty("SPECULARSPIKECONSTANT", 0.0, true); 
+    mptPMTCoupling->AddConstProperty("BACKSCATTERCONSTANT",   0.0, true); 
+    mptPMTCoupling->AddConstProperty("DIFFUSELOBECONSTANT",   0.0, true);
+    
+    pmtCouplingSurface->SetMaterialPropertiesTable(mptPMTCoupling);
 }
 
 void MyDetectorConstruction::ConstructWLS()
 {
-    // Use half measurements as Geant4 doubles them
+    // Dimensions
+    G4double WLS_thickness = fWLSThickness/2; //Geant4 works in half lengths
+    G4double WLS_size = fWLSSize/2;
+    G4double WLS_gap = fWLSGap/2;
+    G4double PMT_radius = 0.0381*m;  //3-inch
+    //G4double PMT_radius = 0.0635*m;    //5-inch 
+    //G4double PMT_radius = 0.1016*m;  //8-inch
+    //G4double PMT_radius = 0.127*m;   //10-inch
 
-    //0.002 -> 4mm '
-    //0.0025 -> 5mm '
-    //0.003 -> 6mm '
-    //0.0035 -> 7mm '
-    //0.004 -> 8mm '
-    //0.0045 -> 9mm '
-    //0.005 -> 10mm '
-    //0.0055 -> 11mm '
-    G4double WLS_thickness = 0.0045*m;
-    //0.15 -> 30cm '
-    //0.175 -> 35cm '
-    //0.2 -> 40cm '
-    //0.225 -> 45cm '
-    //0.25 -> 50cm '
-    //0.275 -> 55cm '
-    //0.3 -> 60cm '
-    G4double WLS_size = 0.225*m;
+    // Half-thickness (Total thickness = 1.0mm)
+    G4double WLS_Mirror_thickness = 0.0005*m; 
+    G4double pmt_thickness = 1.0 * mm;
 
-    G4double WLS_Mirror_thickness = 0.0005*m; //2mm
-    G4double WLS_Mirror_box_width = WLS_thickness; //10mm
-    G4double WLS_Mirror_size = WLS_size + WLS_Mirror_thickness; //15.05cm
+    G4RotationMatrix* Rotation = new G4RotationMatrix();
+    Rotation->rotateX(270*deg); 
 
-    G4double PMT_radius = 0.0381*m; //3-inches diameter in metres
-    //G4double PMT_radius = 0.1016*m; //8-inches diameter in metres
+    //--------------------------PMT---------------------------------
+    solidPMTSphere = new G4Sphere("solidPMTSphere", PMT_radius - pmt_thickness, PMT_radius, 0.0, 2*pi, 0.0, 0.5*pi); //shell
+    //solidPMTSphere = new G4Sphere("solidPMTSphere", 0.0, PMT_radius, 0.0, 2*pi, 0.0, 0.5*pi); //solid
+    logicPMTSphere = new G4LogicalVolume(solidPMTSphere, Glass, "logicPMTSphere"); 
 
-	G4RotationMatrix* Rotation = new G4RotationMatrix();
-	Rotation->rotateX(270*deg); //rotate to face downwards
+    //--------------------------WLS-PMT Gap----------------------
+    G4Sphere* solidCutoutSphere = new G4Sphere("solidCutoutSphere", 0., PMT_radius + WLS_gap, 0., 2*pi, 0., 0.5*pi);
 
-//--------------------------PMT---------------------------------
-
-//SPHERE
-
-	solidPMTSphere = new G4Sphere("solidPMTSphere", 0., PMT_radius, 0., 2*pi, 0., 0.5*pi);  //setting the dimensions for the detectors
-
-	logicPMTSphere = new G4LogicalVolume(solidPMTSphere, Glass, "logicPMTSphere"); 
-
-
-//--------------------------WLS---------------------------------
-
-	solidWLS = new G4Box("solidWLSBox", WLS_size, WLS_thickness, WLS_size);
-
-    //Remove the hemisphere (PMT) from the bottom of the WLS box
-    G4VSolid* WLS = new G4SubtractionSolid("WLS-PMTCylinder", solidWLS, solidPMTSphere, Rotation, G4ThreeVector(0., WLS_thickness, 0.));
-
+    //--------------------------WLS---------------------------------
+    solidWLS = new G4Box("solidWLSBox", WLS_size, WLS_thickness, WLS_size);
+    
+    // Remove the hemisphere (PMT) from the bottom of the WLS box
+    G4VSolid* WLS = new G4SubtractionSolid("WLS-PMTCylinder", solidWLS, solidCutoutSphere, Rotation, G4ThreeVector(0., WLS_thickness, 0.));
     logicWLS = new G4LogicalVolume(WLS, PMMA, "logicWLS");
-
     fScoringVolume = logicWLS;
 
+    //--------------------------LINER & WATER---------------------------------
+    G4Box *solidLiner = new G4Box("solidLiner", xWorld, yWorld, zWorld);
+    G4LogicalVolume *logicLiner = new G4LogicalVolume(solidLiner, Polyethylene, "logicLiner");
+    G4PVPlacement *physLiner = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicLiner, "physLiner", logicWorld, false, 7, true);
+    
+    G4Box *solidWater = new G4Box("solidWater", xWorld-1*mm, yWorld-1*mm, zWorld-1*mm);
+    G4LogicalVolume *logicWater = new G4LogicalVolume(solidWater, Water, "logicWater");
+    G4PVPlacement *physWater = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWater, "physWater", logicLiner, false, 8, true);
 
-       
-//WLS Mirror
-
-    solidMirrorWLSBox = new G4Box("solidMirrorTankBox", WLS_Mirror_size ,WLS_Mirror_box_width, WLS_Mirror_size);
-
-    //Remove WLS from WLS mirror volume
-	G4VSolid* WLSMirrorSubtract    = new G4SubtractionSolid("mirrorWLSSubtract", solidMirrorWLSBox, solidWLS, 0, G4ThreeVector(0., 0., 0.));
-
-	logicWLSMirror = new G4LogicalVolume(WLSMirrorSubtract, PMMA, "logicWLSMirror"); //creating the detectors, with same material as world
-
-    G4LogicalSkinSurface *WLSMirrorSkin = new G4LogicalSkinSurface("WLSMirrorSkin", logicWLSMirror, mirrorSurface); //apply reflective skin surface to mirror volume
-
-//--------------------------LINER-VOLUME---------------------------------
-    G4Box *solidLiner = new G4Box("solidLiner", xWorld, yWorld, zWorld); //setting up world volume as a box
-
-	G4LogicalVolume *logicLiner = new G4LogicalVolume(solidLiner, Water, "logicLiner"); //creating the world as dimensions from box and material
-
-	G4PVPlacement *physLiner = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicLiner, "physLiner", logicWorld, false, 7, true); //placing the world into geant 4 sim
-
-    G4LogicalSkinSurface *MirrorSkin = new G4LogicalSkinSurface("worldMirrorSkin", logicLiner, mirrorSurface); //apply reflective skin surface to mirror volume
+    //--------------------------PLACEMENTS---------------------------------
     
 
-//--------------------------WATER-VOLUME---------------------------------
-    G4Box *solidWater = new G4Box("solidWater", xWorld-1*mm, yWorld-1*mm, zWorld-1*mm); //setting up world volume as a box
+    G4double wls_pos_y = yWorld - 1*mm - WLS_thickness - 2*WLS_Mirror_thickness;
 
-	G4LogicalVolume *logicWater = new G4LogicalVolume(solidWater, Water, "logicWater"); //creating the world as dimensions from box and material
+    // Place PMT
+    // With WLS
+    physPMTSphere = new G4PVPlacement(Rotation, G4ThreeVector(0., yWorld - 1*mm -2*WLS_Mirror_thickness, 0.), logicPMTSphere, "physPMTSphere", logicWater, false, 0, true);
+    //Without WLS
+    //physPMTSphere = new G4PVPlacement(Rotation, G4ThreeVector(0., yWorld - 1*mm, 0.), logicPMTSphere, "physPMTSphere", logicWater, false, 0, true);
+    
+    // Place WLS
+    physWLS = new G4PVPlacement(0, G4ThreeVector(0., wls_pos_y, 0.), logicWLS, "physWLS", logicWater, false, 1, true);
 
-	G4PVPlacement *physWater = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWater, "physWater", logicLiner, false, 8, true); //placing the world into geant 4 sim
 
-    //Placing after mother volumes
-    physPMTSphere = new G4PVPlacement(Rotation, G4ThreeVector(0., yWorld-1*mm, 0.), logicPMTSphere, "physPMTSphere", logicWater, false, 0, true); //place PMT at top of tank, facing downwards
-    physWLS = new G4PVPlacement(0, G4ThreeVector(0., yWorld-1*mm - WLS_thickness, 0.), logicWLS, "physWLS", logicWater, false, 1, true); //placing WLS into world volume, at top of tank, facing down
-    physWLSMirror = new G4PVPlacement(0, G4ThreeVector(0., yWorld-1*mm - WLS_Mirror_box_width, 0.), logicWLSMirror, "physWLSMirror", logicWater, false, 2, true); // Place in center of tank, to line inner edges of tank
+    //--------------------------MIRROR PANES---------------------------------
+    
+
+    G4double dist = WLS_size + WLS_Mirror_thickness; 
+    G4Box* solidSideMirrorX = new G4Box("solidSideMirrorX", WLS_Mirror_thickness, WLS_thickness, WLS_size);
+    G4LogicalVolume* logicSideMirrorX = new G4LogicalVolume(solidSideMirrorX, Aluminium, "logicSideMirrorX");
+
+    // Place Right (+X)
+    G4PVPlacement* physSideRight = new G4PVPlacement(0, G4ThreeVector(dist, wls_pos_y, 0.), logicSideMirrorX, "physSideRight", logicWater, false, 101, true);
+    
+    // Place Left (-X)
+    G4PVPlacement* physSideLeft  = new G4PVPlacement(0, G4ThreeVector(-dist, wls_pos_y, 0.), logicSideMirrorX, "physSideLeft", logicWater, false, 102, true);
+    
+    G4double long_half_length = WLS_size + (2 * WLS_Mirror_thickness);
+    G4Box* solidSideMirrorZ = new G4Box("solidSideMirrorZ", long_half_length, WLS_thickness, WLS_Mirror_thickness);
+    G4LogicalVolume* logicSideMirrorZ = new G4LogicalVolume(solidSideMirrorZ, Aluminium, "logicSideMirrorZ");
+
+    // Place Front (+Z)
+    G4PVPlacement* physSideFront = new G4PVPlacement(0, G4ThreeVector(0., wls_pos_y, dist), logicSideMirrorZ, "physSideFront", logicWater, false, 103, true);
+    
+    // Place Back (-Z)
+    G4PVPlacement* physSideBack  = new G4PVPlacement(0, G4ThreeVector(0., wls_pos_y, -dist), logicSideMirrorZ, "physSideBack", logicWater, false, 104, true);
+
+
+    // --- Top Mirror (Lid) ---
+
+    G4double top_size = WLS_size + (2 * WLS_Mirror_thickness);
+    G4Box* solidTopMirror = new G4Box("solidTopMirror", top_size, WLS_Mirror_thickness, top_size);
+    G4LogicalVolume* logicTopMirror = new G4LogicalVolume(solidTopMirror, Aluminium, "logicTopMirror");
+
+    G4double topDist = wls_pos_y + WLS_thickness + WLS_Mirror_thickness;
+    G4PVPlacement* physTop = new G4PVPlacement(0, G4ThreeVector(0., topDist, 0.), logicTopMirror, "physTopMirror", logicWater, false, 105, true);
+
+
+    //--------------------------SURFACES---------------------------------
+    
+    new G4LogicalSkinSurface("WLS_Mirror_SkinZ", logicSideMirrorZ, AluminiumCoatingSurface);
+    new G4LogicalSkinSurface("WLS_Mirror_SkinX", logicSideMirrorX, AluminiumCoatingSurface);
+    new G4LogicalSkinSurface("WLS_Mirror_SkinY", logicTopMirror, AluminiumCoatingSurface);
+    new G4LogicalSkinSurface("worldMirrorSkin", logicLiner, TyvekSurface);
+    new G4LogicalBorderSurface("WLS_PMT_Coupling", physWLS, physPMTSphere, pmtCouplingSurface);
 
 }
 
@@ -378,4 +486,24 @@ void MyDetectorConstruction::ConstructSDandField()
     if(logicPMTSphere != NULL)
         logicPMTSphere->SetSensitiveDetector(sensDet); //assigning the detectors as senstive detectors (it generates a hit when a track traverses its volume)
 
+}
+
+void MyDetectorConstruction::SetWLSSize(G4double val) {
+    fWLSSize = val;
+    G4RunManager::GetRunManager()->ReinitializeGeometry();
+}
+
+void MyDetectorConstruction::SetWLSThickness(G4double val) {
+    fWLSThickness = val;
+    G4RunManager::GetRunManager()->ReinitializeGeometry();
+}
+
+void MyDetectorConstruction::SetWLSTimeConstant(G4double val) {
+    fWLSTimeConstant = val;
+    G4RunManager::GetRunManager()->ReinitializeGeometry();
+}
+
+void MyDetectorConstruction::SetWLSGap(G4double val) {
+    fWLSGap = val;
+    G4RunManager::GetRunManager()->ReinitializeGeometry();
 }

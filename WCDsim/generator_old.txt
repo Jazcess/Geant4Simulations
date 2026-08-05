@@ -1,0 +1,172 @@
+// #include "generator.hh"
+
+// #include "G4Event.hh"
+// #include "G4ParticleGun.hh"
+// #include "G4ParticleTable.hh"
+// #include "G4ParticleDefinition.hh"
+// #include "G4SystemOfUnits.hh"
+// #include "G4VPrimaryGenerator.hh"
+// #include "G4MuonPlus.hh"
+// #include "Randomize.hh"
+// #include "G4AnalysisManager.hh"
+// #include <cmath>
+
+// MyPrimaryGenerator::MyPrimaryGenerator()
+// : G4VUserPrimaryGeneratorAction(),
+//   fParticleGun(0)
+// {
+//   G4int n_particle = 1;
+//   fParticleGun = new G4ParticleGun(n_particle);
+  
+//   // Get the particle table and define the particle type
+//   G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
+//   G4ParticleDefinition* muon = G4MuonPlus::Definition();
+//   fParticleGun->SetParticleDefinition(muon);
+// }
+
+// MyPrimaryGenerator::~MyPrimaryGenerator()
+// {
+//   delete fParticleGun;
+// }
+
+// void MyPrimaryGenerator::GeneratePrimaries(G4Event* anEvent)
+// {
+//   G4double energy = 1.0 * GeV;
+//   G4int eventID = anEvent->GetEventID();
+  
+//   // 1. SYSTEMATIC 1D SWEEP (100 Steps per sweep)
+//   // Muons are injected exactly 100 times across the 3.8m tank.
+//   G4double startX = -1900.0 * mm; // Left edge
+//   G4double endX   =  1900.0 * mm; // Right edge
+//   G4int numPositions = 100;       // Sweep exactly 100 times per cycle
+  
+//   // Calculate step size based on 100 positions
+//   G4double stepSize = (endX - startX) / (numPositions - 1);
+  
+//   // The modulo operator (%) ensures the position cycles back to the start 
+//   // every 100 events.
+//   G4int posIndex = eventID % numPositions; 
+  
+//   G4double xPos = startX + (posIndex * stepSize); 
+//   G4double zPos = 0.0 * m; 
+//   G4double yPos = 0.499 * m; 
+
+//   // 2. FIXED DIRECTION (Straight Downwards)
+//   // Removed randomized cosmic ray profile; muons now shoot perfectly vertical.
+//   G4double dirX = 0.0;
+//   G4double dirY = -1.0; 
+//   G4double dirZ = 0.0; 
+  
+//   G4ThreeVector direction(dirX, dirY, dirZ);
+
+//   // 3. RECORD TO NTUPLE
+//   G4AnalysisManager* man = G4AnalysisManager::Instance();
+  
+//   man->FillNtupleIColumn(2, 0, eventID);          // fEvent
+//   man->FillNtupleDColumn(2, 1, xPos);             // fX
+//   man->FillNtupleDColumn(2, 2, yPos);             // fY
+//   man->FillNtupleDColumn(2, 3, zPos);             // fZ
+//   man->FillNtupleDColumn(2, 4, direction.x());    // fXMom
+//   man->FillNtupleDColumn(2, 5, direction.y());    // fYMom
+//   man->FillNtupleDColumn(2, 6, direction.z());    // fZMom
+//   man->FillNtupleDColumn(2, 7, direction.theta());// ftheta
+//   man->FillNtupleDColumn(2, 8, direction.phi());  // fphi
+//   man->AddNtupleRow(2); 
+
+//   // 4. GENERATE PARTICLE
+//   fParticleGun->SetParticleEnergy(energy);
+//   fParticleGun->SetParticleMomentumDirection(direction);
+//   fParticleGun->SetParticlePosition(G4ThreeVector(xPos, yPos, zPos));
+//   fParticleGun->GeneratePrimaryVertex(anEvent);
+// }
+
+#include "generator.hh"
+
+#include "G4Event.hh"
+#include "G4ParticleGun.hh"
+#include "G4ParticleTable.hh"
+#include "G4ParticleDefinition.hh"
+#include "G4SystemOfUnits.hh"
+#include "G4VPrimaryGenerator.hh"
+#include "G4MuonPlus.hh"
+#include "Randomize.hh"
+#include "G4AnalysisManager.hh"
+#include <cmath>
+
+MyPrimaryGenerator::MyPrimaryGenerator()
+: G4VUserPrimaryGeneratorAction(),
+  fParticleGun(0)
+{
+  G4int n_particle = 1;
+  fParticleGun = new G4ParticleGun(n_particle);
+  
+  // Get the particle table and define the particle type
+  G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
+  G4ParticleDefinition* muon = G4MuonPlus::Definition();
+  fParticleGun->SetParticleDefinition(muon);
+}
+
+MyPrimaryGenerator::~MyPrimaryGenerator()
+{
+  delete fParticleGun;
+}
+
+void MyPrimaryGenerator::GeneratePrimaries(G4Event* anEvent)
+{
+  G4double energy = 1.0 * GeV;
+  G4int eventID = anEvent->GetEventID();
+  
+  // 1. SYSTEMATIC 1D SWEEP (100 Steps per sweep)
+  // Muons are injected exactly 100 times across the 3.8m tank.
+  G4double startX = -1900.0 * mm; // Left edge
+  G4double endX   =  1900.0 * mm; // Right edge
+  G4int numPositions = 100;       // Sweep exactly 100 times per cycle
+  
+  // Calculate step size based on 100 positions
+  G4double stepSize = (endX - startX) / (numPositions - 1);
+  
+  // The modulo operator (%) ensures the position cycles back to the start 
+  // every 100 events.
+  G4int posIndex = eventID % numPositions; 
+  
+  G4double xPos = startX + (posIndex * stepSize); 
+  G4double zPos = 0.0 * m; 
+  G4double yPos = 0.499 * m; 
+
+  // 2. ANGULAR DISTRIBUTION (Cosmic Ray Profile)
+  // Restored randomized cosmic ray angular distribution (downwards)
+  G4double u = G4UniformRand(); 
+  
+  G4double cosTheta = std::pow(u, 1.0/3.0); 
+  G4double sinTheta = std::sqrt(1.0 - cosTheta * cosTheta);
+  
+  // Uniform azimuthal angle (0 to 2*pi)
+  G4double phi = G4UniformRand() * CLHEP::twopi; 
+  
+  // Map to Cartesian coordinates
+  G4double dirX = sinTheta * std::cos(phi);
+  G4double dirZ = sinTheta * std::sin(phi);
+  G4double dirY = -cosTheta; 
+  
+  G4ThreeVector direction(dirX, dirY, dirZ);
+
+  // 3. RECORD TO NTUPLE
+  G4AnalysisManager* man = G4AnalysisManager::Instance();
+  
+  man->FillNtupleIColumn(2, 0, eventID);          // fEvent
+  man->FillNtupleDColumn(2, 1, xPos);             // fX
+  man->FillNtupleDColumn(2, 2, yPos);             // fY
+  man->FillNtupleDColumn(2, 3, zPos);             // fZ
+  man->FillNtupleDColumn(2, 4, direction.x());    // fXMom
+  man->FillNtupleDColumn(2, 5, direction.y());    // fYMom
+  man->FillNtupleDColumn(2, 6, direction.z());    // fZMom
+  man->FillNtupleDColumn(2, 7, direction.theta());// ftheta
+  man->FillNtupleDColumn(2, 8, direction.phi());  // fphi
+  man->AddNtupleRow(2); 
+
+  // 4. GENERATE PARTICLE
+  fParticleGun->SetParticleEnergy(energy);
+  fParticleGun->SetParticleMomentumDirection(direction);
+  fParticleGun->SetParticlePosition(G4ThreeVector(xPos, yPos, zPos));
+  fParticleGun->GeneratePrimaryVertex(anEvent);
+}

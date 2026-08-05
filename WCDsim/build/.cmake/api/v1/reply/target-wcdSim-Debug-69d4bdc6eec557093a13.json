@@ -1,0 +1,619 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "wcdSim"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"set_target_properties",
+			"include",
+			"find_package",
+			"set_property",
+			"find_dependency"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt",
+			"/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/cmake/Geant4/Geant4LibraryDepends.cmake",
+			"/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/cmake/Geant4/Geant4Config.cmake",
+			"/alice-home/3/j/jss55/miniconda3/envs/G4Env/share/cmake-3.31/Modules/FindThreads.cmake",
+			"/alice-home/3/j/jss55/miniconda3/envs/G4Env/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake",
+			"/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/cmake/Geant4/PTL/PTLConfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 25,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 26,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 6,
+				"parent" : 0
+			},
+			{
+				"file" : 2,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 576,
+				"parent" : 4
+			},
+			{
+				"file" : 1,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 385,
+				"parent" : 6
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 175,
+				"parent" : 6
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 95,
+				"parent" : 6
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 87,
+				"parent" : 6
+			},
+			{
+				"command" : 6,
+				"file" : 2,
+				"line" : 286,
+				"parent" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 76,
+				"parent" : 11
+			},
+			{
+				"file" : 5,
+				"parent" : 12
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 56,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 76,
+				"parent" : 14
+			},
+			{
+				"file" : 3,
+				"parent" : 15
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 238,
+				"parent" : 16
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/j/jss55/miniconda3/envs/G4Env/include -g -std=gnu++17"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-pthread"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "G4LIB_BUILD_DLL"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "G4UI_USE_QT"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "G4VIS_USE_OPENGLQT"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "G4VIS_USE_QT3D"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "G4VIS_USE_TOOLSSG_QT_GLES"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "G4VIS_USE_TOOLSSG_QT_ZB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "PTL_BUILD_DLL"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_OPENGL_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_WIDGETS_LIB"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/include/Geant4"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/j/jss55/miniconda3/envs/G4Env/include/qt"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/j/jss55/miniconda3/envs/G4Env/include/qt/QtGui"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/j/jss55/miniconda3/envs/G4Env/include/qt/QtCore"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/j/jss55/miniconda3/envs/G4Env/./mkspecs/linux-g++"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/j/jss55/miniconda3/envs/G4Env/include/qt/QtOpenGL"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/j/jss55/miniconda3/envs/G4Env/include/qt/QtWidgets"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2,
+					2
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			]
+		}
+	],
+	"id" : "wcdSim::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/j/jss55/miniconda3/envs/G4Env/include -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/home/j/jss55/miniconda3/envs/G4Env/lib -Wl,-rpath-link,/home/j/jss55/miniconda3/envs/G4Env/lib -L/home/j/jss55/miniconda3/envs/G4Env/lib",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4Tree.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4FR.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4GMocren.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4visHepRep.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4RayTracer.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4VRML.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4ToolsSG.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4OpenGL.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4visQt3D.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4vis_management.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4modeling.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4interfaces.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4mctruth.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4geomtext.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4error_propagation.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4readout.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4physicslists.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4run.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4event.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4tracking.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4parmodels.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4processes.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4digits_hits.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4track.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4particles.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4geometry.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4materials.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4graphics_reps.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "/home/j/jss55/miniconda3/envs/G4Env/lib/libGL.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "/home/j/jss55/miniconda3/envs/G4Env/lib/libQt5OpenGL.so.5.15.15",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "/home/j/jss55/miniconda3/envs/G4Env/lib/libQt5Widgets.so.5.15.15",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "/home/j/jss55/miniconda3/envs/G4Env/lib/libQt5Gui.so.5.15.15",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/j/jss55/miniconda3/envs/G4Env/lib/libQt5Core.so.5.15.15",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4analysis.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "/home/j/jss55/miniconda3/envs/G4Env/lib/libexpat.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4zlib.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4intercoms.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4global.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4clhep.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "/home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4ptl.so.2.3.3",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 17,
+				"fragment" : "-pthread",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "wcdSim",
+	"nameOnDisk" : "wcdSim",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "wcdSim.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "action.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "construction.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "detector.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "event.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "generator.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "physics.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "run.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "stepping.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "action.hh",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "construction.hh",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "detector.hh",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "event.hh",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "generator.hh",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "physics.hh",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "run.hh",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "stepping.hh",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "EXECUTABLE"
+}

@@ -1,0 +1,128 @@
+# --- INITIALIZATION ---
+/vis/viewer/clearVisActionModifiers
+/vis/viewer/reset
+/vis/scene/add/trajectories rich
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setTimeSliceInterval 0.01 ns
+
+# --- ZOOM & FOCUS SETTINGS ---
+/vis/viewer/set/targetPoint 0 45 0 cm
+
+# Increase zoom significantly to see the PMT detail
+/vis/viewer/zoom 5.0
+
+# --- GENERATE EVENT ---
+/run/beamOn 1
+
+# --- VISUAL SETTINGS ---
+/vis/viewer/set/timeWindow/displayHeadTime true
+/vis/viewer/set/timeWindow/fadeFactor 5
+
+# --- FRAME GENERATION (Expanding Window) ---
+# Logic: Start time is fixed at 0ns, Window Width increments 1-50ns
+
+/vis/viewer/set/timeWindow/startTime 0 ns 1 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 2 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 3 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 4 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 5 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 6 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 7 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 8 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 9 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 10 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 11 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 12 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 13 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 14 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 15 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 16 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 17 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 18 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 19 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 20 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 21 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 22 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 23 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 24 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 25 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 26 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 27 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 28 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 29 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 30 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 31 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 32 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 33 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 34 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 35 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 36 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 37 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 38 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 39 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 40 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 41 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 42 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 43 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 44 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 45 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 46 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 47 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 48 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 49 ns
+/vis/viewer/save
+/vis/viewer/set/timeWindow/startTime 0 ns 50 ns
+/vis/viewer/save
+
+# --- EXPORT ---
+/vis/viewer/interpolate ! ! ! ! export
+
+#ffmpeg -framerate 24 -pattern_type glob -i 'G4OpenGL_viewer-0_*.jpg' -c:v mpeg4 -q:v 5 muon_animation2.mp4

@@ -1,0 +1,116 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"/home/j/jss55/miniconda3/envs/G4Env/include",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib/gcc/x86_64-conda-linux-gnu/9.5.0/include",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib/gcc/x86_64-conda-linux-gnu/9.5.0/include-fixed",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/include",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/sysroot/usr/include"
+					],
+					"linkDirectories" : 
+					[
+						"/home/j/jss55/miniconda3/envs/G4Env/lib",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib/gcc/x86_64-conda-linux-gnu/9.5.0",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib/gcc",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/lib",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/sysroot/lib",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/sysroot/usr/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"gcc",
+						"gcc_s",
+						"c",
+						"gcc",
+						"gcc_s"
+					]
+				},
+				"path" : "/home/j/jss55/miniconda3/envs/aerieEnv/bin/gcc",
+				"version" : "9.5.0"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"/home/j/jss55/miniconda3/envs/G4Env/include",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib/gcc/x86_64-conda-linux-gnu/9.5.0/include",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib/gcc/x86_64-conda-linux-gnu/9.5.0/include-fixed",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/include",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/include/c++/9.5.0",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/include/c++/9.5.0/x86_64-conda-linux-gnu",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/include/c++/9.5.0/backward",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/sysroot/usr/include"
+					],
+					"linkDirectories" : 
+					[
+						"/home/j/jss55/miniconda3/envs/G4Env/lib",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib/gcc/x86_64-conda-linux-gnu/9.5.0",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib/gcc",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/lib",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/sysroot/lib",
+						"/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/sysroot/usr/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"stdc++",
+						"m",
+						"gcc_s",
+						"gcc",
+						"c",
+						"gcc_s",
+						"gcc"
+					]
+				},
+				"path" : "/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++",
+				"version" : "9.5.0"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm",
+				"ccm",
+				"cxxm",
+				"c++m"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

@@ -1,0 +1,5 @@
+# Set the size using the variable from the master loop
+/myDet/wlsSize {size_var} mm
+
+# Now loop through all thicknesses for this specific size
+/control/loop stepthick.mac thick_var 2 20 2

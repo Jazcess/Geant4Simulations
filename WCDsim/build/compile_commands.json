@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/home/j/jss55/Software/geant4/WCDsim/build",
+  "command": "/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_QT3D -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -isystem /home/j/jss55/Software/geant4/geant4-v11.2.1-install/include/Geant4 -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtGui -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtCore -isystem /home/j/jss55/miniconda3/envs/G4Env/./mkspecs/linux-g++ -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtOpenGL -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtWidgets -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/j/jss55/miniconda3/envs/G4Env/include -g -std=gnu++17 -pthread -fPIC -o CMakeFiles/wcdSim.dir/wcdSim.cc.o -c /home/j/jss55/Software/geant4/WCDsim/wcdSim.cc",
+  "file": "/home/j/jss55/Software/geant4/WCDsim/wcdSim.cc",
+  "output": "CMakeFiles/wcdSim.dir/wcdSim.cc.o"
+},
+{
+  "directory": "/home/j/jss55/Software/geant4/WCDsim/build",
+  "command": "/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_QT3D -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -isystem /home/j/jss55/Software/geant4/geant4-v11.2.1-install/include/Geant4 -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtGui -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtCore -isystem /home/j/jss55/miniconda3/envs/G4Env/./mkspecs/linux-g++ -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtOpenGL -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtWidgets -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/j/jss55/miniconda3/envs/G4Env/include -g -std=gnu++17 -pthread -fPIC -o CMakeFiles/wcdSim.dir/action.cc.o -c /home/j/jss55/Software/geant4/WCDsim/action.cc",
+  "file": "/home/j/jss55/Software/geant4/WCDsim/action.cc",
+  "output": "CMakeFiles/wcdSim.dir/action.cc.o"
+},
+{
+  "directory": "/home/j/jss55/Software/geant4/WCDsim/build",
+  "command": "/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_QT3D -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -isystem /home/j/jss55/Software/geant4/geant4-v11.2.1-install/include/Geant4 -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtGui -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtCore -isystem /home/j/jss55/miniconda3/envs/G4Env/./mkspecs/linux-g++ -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtOpenGL -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtWidgets -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/j/jss55/miniconda3/envs/G4Env/include -g -std=gnu++17 -pthread -fPIC -o CMakeFiles/wcdSim.dir/construction.cc.o -c /home/j/jss55/Software/geant4/WCDsim/construction.cc",
+  "file": "/home/j/jss55/Software/geant4/WCDsim/construction.cc",
+  "output": "CMakeFiles/wcdSim.dir/construction.cc.o"
+},
+{
+  "directory": "/home/j/jss55/Software/geant4/WCDsim/build",
+  "command": "/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_QT3D -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -isystem /home/j/jss55/Software/geant4/geant4-v11.2.1-install/include/Geant4 -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtGui -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtCore -isystem /home/j/jss55/miniconda3/envs/G4Env/./mkspecs/linux-g++ -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtOpenGL -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtWidgets -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/j/jss55/miniconda3/envs/G4Env/include -g -std=gnu++17 -pthread -fPIC -o CMakeFiles/wcdSim.dir/detector.cc.o -c /home/j/jss55/Software/geant4/WCDsim/detector.cc",
+  "file": "/home/j/jss55/Software/geant4/WCDsim/detector.cc",
+  "output": "CMakeFiles/wcdSim.dir/detector.cc.o"
+},
+{
+  "directory": "/home/j/jss55/Software/geant4/WCDsim/build",
+  "command": "/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_QT3D -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -isystem /home/j/jss55/Software/geant4/geant4-v11.2.1-install/include/Geant4 -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtGui -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtCore -isystem /home/j/jss55/miniconda3/envs/G4Env/./mkspecs/linux-g++ -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtOpenGL -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtWidgets -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/j/jss55/miniconda3/envs/G4Env/include -g -std=gnu++17 -pthread -fPIC -o CMakeFiles/wcdSim.dir/event.cc.o -c /home/j/jss55/Software/geant4/WCDsim/event.cc",
+  "file": "/home/j/jss55/Software/geant4/WCDsim/event.cc",
+  "output": "CMakeFiles/wcdSim.dir/event.cc.o"
+},
+{
+  "directory": "/home/j/jss55/Software/geant4/WCDsim/build",
+  "command": "/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_QT3D -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -isystem /home/j/jss55/Software/geant4/geant4-v11.2.1-install/include/Geant4 -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtGui -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtCore -isystem /home/j/jss55/miniconda3/envs/G4Env/./mkspecs/linux-g++ -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtOpenGL -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtWidgets -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/j/jss55/miniconda3/envs/G4Env/include -g -std=gnu++17 -pthread -fPIC -o CMakeFiles/wcdSim.dir/generator.cc.o -c /home/j/jss55/Software/geant4/WCDsim/generator.cc",
+  "file": "/home/j/jss55/Software/geant4/WCDsim/generator.cc",
+  "output": "CMakeFiles/wcdSim.dir/generator.cc.o"
+},
+{
+  "directory": "/home/j/jss55/Software/geant4/WCDsim/build",
+  "command": "/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_QT3D -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -isystem /home/j/jss55/Software/geant4/geant4-v11.2.1-install/include/Geant4 -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtGui -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtCore -isystem /home/j/jss55/miniconda3/envs/G4Env/./mkspecs/linux-g++ -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtOpenGL -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtWidgets -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/j/jss55/miniconda3/envs/G4Env/include -g -std=gnu++17 -pthread -fPIC -o CMakeFiles/wcdSim.dir/physics.cc.o -c /home/j/jss55/Software/geant4/WCDsim/physics.cc",
+  "file": "/home/j/jss55/Software/geant4/WCDsim/physics.cc",
+  "output": "CMakeFiles/wcdSim.dir/physics.cc.o"
+},
+{
+  "directory": "/home/j/jss55/Software/geant4/WCDsim/build",
+  "command": "/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_QT3D -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -isystem /home/j/jss55/Software/geant4/geant4-v11.2.1-install/include/Geant4 -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtGui -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtCore -isystem /home/j/jss55/miniconda3/envs/G4Env/./mkspecs/linux-g++ -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtOpenGL -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtWidgets -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/j/jss55/miniconda3/envs/G4Env/include -g -std=gnu++17 -pthread -fPIC -o CMakeFiles/wcdSim.dir/run.cc.o -c /home/j/jss55/Software/geant4/WCDsim/run.cc",
+  "file": "/home/j/jss55/Software/geant4/WCDsim/run.cc",
+  "output": "CMakeFiles/wcdSim.dir/run.cc.o"
+},
+{
+  "directory": "/home/j/jss55/Software/geant4/WCDsim/build",
+  "command": "/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_QT3D -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -isystem /home/j/jss55/Software/geant4/geant4-v11.2.1-install/include/Geant4 -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtGui -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtCore -isystem /home/j/jss55/miniconda3/envs/G4Env/./mkspecs/linux-g++ -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtOpenGL -isystem /home/j/jss55/miniconda3/envs/G4Env/include/qt/QtWidgets -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/j/jss55/miniconda3/envs/G4Env/include -g -std=gnu++17 -pthread -fPIC -o CMakeFiles/wcdSim.dir/stepping.cc.o -c /home/j/jss55/Software/geant4/WCDsim/stepping.cc",
+  "file": "/home/j/jss55/Software/geant4/WCDsim/stepping.cc",
+  "output": "CMakeFiles/wcdSim.dir/stepping.cc.o"
+}
+]

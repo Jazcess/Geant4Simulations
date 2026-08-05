@@ -1,19 +1,19 @@
-set(CMAKE_CXX_COMPILER "/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++")
+set(CMAKE_CXX_COMPILER "/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
-set(CMAKE_CXX_COMPILER_VERSION "12.3.0")
+set(CMAKE_CXX_COMPILER_VERSION "9.5.0")
 set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_CXX_COMPILER_WRAPPER "")
-set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "17")
+set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "14")
 set(CMAKE_CXX_EXTENSIONS_COMPUTED_DEFAULT "ON")
-set(CMAKE_CXX_STANDARD_LATEST "23")
-set(CMAKE_CXX_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters;cxx_std_11;cxx_alias_templates;cxx_alignas;cxx_alignof;cxx_attributes;cxx_auto_type;cxx_constexpr;cxx_decltype;cxx_decltype_incomplete_return_types;cxx_default_function_template_args;cxx_defaulted_functions;cxx_defaulted_move_initializers;cxx_delegating_constructors;cxx_deleted_functions;cxx_enum_forward_declarations;cxx_explicit_conversions;cxx_extended_friend_declarations;cxx_extern_templates;cxx_final;cxx_func_identifier;cxx_generalized_initializers;cxx_inheriting_constructors;cxx_inline_namespaces;cxx_lambdas;cxx_local_type_template_args;cxx_long_long_type;cxx_noexcept;cxx_nonstatic_member_init;cxx_nullptr;cxx_override;cxx_range_for;cxx_raw_string_literals;cxx_reference_qualified_functions;cxx_right_angle_brackets;cxx_rvalue_references;cxx_sizeof_member;cxx_static_assert;cxx_strong_enums;cxx_thread_local;cxx_trailing_return_types;cxx_unicode_literals;cxx_uniform_initialization;cxx_unrestricted_unions;cxx_user_literals;cxx_variadic_macros;cxx_variadic_templates;cxx_std_14;cxx_aggregate_default_initializers;cxx_attribute_deprecated;cxx_binary_literals;cxx_contextual_conversions;cxx_decltype_auto;cxx_digit_separators;cxx_generic_lambdas;cxx_lambda_init_captures;cxx_relaxed_constexpr;cxx_return_type_deduction;cxx_variable_templates;cxx_std_17;cxx_std_20;cxx_std_23")
+set(CMAKE_CXX_STANDARD_LATEST "20")
+set(CMAKE_CXX_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters;cxx_std_11;cxx_alias_templates;cxx_alignas;cxx_alignof;cxx_attributes;cxx_auto_type;cxx_constexpr;cxx_decltype;cxx_decltype_incomplete_return_types;cxx_default_function_template_args;cxx_defaulted_functions;cxx_defaulted_move_initializers;cxx_delegating_constructors;cxx_deleted_functions;cxx_enum_forward_declarations;cxx_explicit_conversions;cxx_extended_friend_declarations;cxx_extern_templates;cxx_final;cxx_func_identifier;cxx_generalized_initializers;cxx_inheriting_constructors;cxx_inline_namespaces;cxx_lambdas;cxx_local_type_template_args;cxx_long_long_type;cxx_noexcept;cxx_nonstatic_member_init;cxx_nullptr;cxx_override;cxx_range_for;cxx_raw_string_literals;cxx_reference_qualified_functions;cxx_right_angle_brackets;cxx_rvalue_references;cxx_sizeof_member;cxx_static_assert;cxx_strong_enums;cxx_thread_local;cxx_trailing_return_types;cxx_unicode_literals;cxx_uniform_initialization;cxx_unrestricted_unions;cxx_user_literals;cxx_variadic_macros;cxx_variadic_templates;cxx_std_14;cxx_aggregate_default_initializers;cxx_attribute_deprecated;cxx_binary_literals;cxx_contextual_conversions;cxx_decltype_auto;cxx_digit_separators;cxx_generic_lambdas;cxx_lambda_init_captures;cxx_relaxed_constexpr;cxx_return_type_deduction;cxx_variable_templates;cxx_std_17;cxx_std_20")
 set(CMAKE_CXX98_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters")
 set(CMAKE_CXX11_COMPILE_FEATURES "cxx_std_11;cxx_alias_templates;cxx_alignas;cxx_alignof;cxx_attributes;cxx_auto_type;cxx_constexpr;cxx_decltype;cxx_decltype_incomplete_return_types;cxx_default_function_template_args;cxx_defaulted_functions;cxx_defaulted_move_initializers;cxx_delegating_constructors;cxx_deleted_functions;cxx_enum_forward_declarations;cxx_explicit_conversions;cxx_extended_friend_declarations;cxx_extern_templates;cxx_final;cxx_func_identifier;cxx_generalized_initializers;cxx_inheriting_constructors;cxx_inline_namespaces;cxx_lambdas;cxx_local_type_template_args;cxx_long_long_type;cxx_noexcept;cxx_nonstatic_member_init;cxx_nullptr;cxx_override;cxx_range_for;cxx_raw_string_literals;cxx_reference_qualified_functions;cxx_right_angle_brackets;cxx_rvalue_references;cxx_sizeof_member;cxx_static_assert;cxx_strong_enums;cxx_thread_local;cxx_trailing_return_types;cxx_unicode_literals;cxx_uniform_initialization;cxx_unrestricted_unions;cxx_user_literals;cxx_variadic_macros;cxx_variadic_templates")
 set(CMAKE_CXX14_COMPILE_FEATURES "cxx_std_14;cxx_aggregate_default_initializers;cxx_attribute_deprecated;cxx_binary_literals;cxx_contextual_conversions;cxx_decltype_auto;cxx_digit_separators;cxx_generic_lambdas;cxx_lambda_init_captures;cxx_relaxed_constexpr;cxx_return_type_deduction;cxx_variable_templates")
 set(CMAKE_CXX17_COMPILE_FEATURES "cxx_std_17")
 set(CMAKE_CXX20_COMPILE_FEATURES "cxx_std_20")
-set(CMAKE_CXX23_COMPILE_FEATURES "cxx_std_23")
+set(CMAKE_CXX23_COMPILE_FEATURES "")
 set(CMAKE_CXX26_COMPILE_FEATURES "")
 
 set(CMAKE_CXX_PLATFORM_ID "Linux")
@@ -21,19 +21,20 @@ set(CMAKE_CXX_SIMULATE_ID "")
 set(CMAKE_CXX_COMPILER_FRONTEND_VARIANT "GNU")
 set(CMAKE_CXX_SIMULATE_VERSION "")
 
+set(CMAKE_CXX_COMPILER_SYSROOT "/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/bin/../x86_64-conda-linux-gnu/sysroot/usr")
+set(CMAKE_COMPILER_SYSROOT "/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/bin/../x86_64-conda-linux-gnu/sysroot/usr")
 
 
-
-set(CMAKE_AR "/usr/bin/ar")
-set(CMAKE_CXX_COMPILER_AR "/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/gcc-ar")
-set(CMAKE_RANLIB "/usr/bin/ranlib")
-set(CMAKE_CXX_COMPILER_RANLIB "/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/gcc-ranlib")
-set(CMAKE_LINKER "/usr/bin/ld")
+set(CMAKE_AR "/home/j/jss55/miniconda3/envs/aerieEnv/bin/ar")
+set(CMAKE_CXX_COMPILER_AR "/home/j/jss55/miniconda3/envs/aerieEnv/bin/gcc-ar")
+set(CMAKE_RANLIB "/home/j/jss55/miniconda3/envs/aerieEnv/bin/ranlib")
+set(CMAKE_CXX_COMPILER_RANLIB "/home/j/jss55/miniconda3/envs/aerieEnv/bin/gcc-ranlib")
+set(CMAKE_LINKER "/home/j/jss55/miniconda3/envs/aerieEnv/bin/ld")
 set(CMAKE_LINKER_LINK "")
 set(CMAKE_LINKER_LLD "")
-set(CMAKE_CXX_COMPILER_LINKER "/usr/bin/ld")
+set(CMAKE_CXX_COMPILER_LINKER "/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/bin/../lib/gcc/x86_64-conda-linux-gnu/9.5.0/../../../../x86_64-conda-linux-gnu/bin/ld")
 set(CMAKE_CXX_COMPILER_LINKER_ID "GNU")
-set(CMAKE_CXX_COMPILER_LINKER_VERSION 2.35.2)
+set(CMAKE_CXX_COMPILER_LINKER_VERSION 2.39)
 set(CMAKE_CXX_COMPILER_LINKER_FRONTEND_VARIANT GNU)
 set(CMAKE_MT "")
 set(CMAKE_TAPI "CMAKE_TAPI-NOTFOUND")
@@ -87,15 +88,11 @@ endif()
 
 
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/include/c++/12.3.0;/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/include/c++/12.3.0/x86_64-pc-linux-gnu;/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/include/c++/12.3.0/backward;/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/lib/gcc/x86_64-pc-linux-gnu/12.3.0/include;/usr/local/include;/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/include;/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed;/usr/include")
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/home/j/jss55/miniconda3/envs/G4Env/include;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib/gcc/x86_64-conda-linux-gnu/9.5.0/include;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib/gcc/x86_64-conda-linux-gnu/9.5.0/include-fixed;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/include;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/include/c++/9.5.0;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/include/c++/9.5.0/x86_64-conda-linux-gnu;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/include/c++/9.5.0/backward;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/sysroot/usr/include")
 set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc_s;gcc;c;gcc_s;gcc")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/lib/gcc/x86_64-pc-linux-gnu/12.3.0;/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/lib64;/lib64;/usr/lib64;/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/lib")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/home/j/jss55/miniconda3/envs/G4Env/lib;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib/gcc/x86_64-conda-linux-gnu/9.5.0;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib/gcc;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/lib;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/lib;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/sysroot/lib;/alice-home/3/j/jss55/miniconda3/envs/aerieEnv/x86_64-conda-linux-gnu/sysroot/usr/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
 set(CMAKE_CXX_COMPILER_CLANG_RESOURCE_DIR "")
 
 set(CMAKE_CXX_COMPILER_IMPORT_STD "")
-### Imported target for C++23 standard library
-set(CMAKE_CXX23_COMPILER_IMPORT_STD_NOT_FOUND_MESSAGE "Unsupported generator: Unix Makefiles")
-
-
 

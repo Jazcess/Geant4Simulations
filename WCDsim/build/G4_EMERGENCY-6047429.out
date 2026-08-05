@@ -1,0 +1,828 @@
+Starting high-priority job on 50 cores...
+
+**************************************************************
+ Geant4 version Name: geant4-11-02-patch-01 [MT]   (16-February-2024)
+  << in Multi-threaded mode >> 
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+--- SLURM JOB DETECTED --- Allocating 50 threads.
+<<< Geant4 Physics List simulation engine: FTFP_BERT
+
+Checking overlaps for volume physLiner:7 (G4Box) ... OK! 
+Checking overlaps for volume physWater:8 (G4Box) ... OK! 
+Checking overlaps for volume physPMTSphere:0 (G4Sphere) ... OK! 
+### Birks coefficients used in run time
+=======================================================================
+======                 Electromagnetic Physics Parameters      ========
+=======================================================================
+LPM effect enabled                                 1
+Enable creation and use of sampling tables         0
+Apply cuts on all EM processes                     0
+Use combined TransportationWithMsc                 Disabled
+Use general process                                1
+Enable linear polarisation for gamma               0
+Enable photoeffect sampling below K-shell          1
+Enable sampling of quantum entanglement            0
+X-section factor for integral approach             0.8
+Min kinetic energy for tables                      100 eV 
+Max kinetic energy for tables                      100 TeV
+Number of bins per decade of a table               7
+Verbose level                                      1
+Verbose level for worker thread                    0
+Bremsstrahlung energy threshold above which 
+  primary e+- is added to the list of secondary    100 TeV
+Bremsstrahlung energy threshold above which primary
+  muon/hadron is added to the list of secondary    100 TeV
+Lowest triplet kinetic energy                      1 MeV
+Enable sampling of gamma linear polarisation       0
+5D gamma conversion model type                     0
+5D gamma conversion model on isolated ion          0
+Livermore data directory                           epics_2017
+=======================================================================
+======                 Ionisation Parameters                   ========
+=======================================================================
+Step function for e+-                              (0.2, 1 mm)
+Step function for muons/hadrons                    (0.2, 0.1 mm)
+Step function for light ions                       (0.2, 0.1 mm)
+Step function for general ions                     (0.2, 0.1 mm)
+Lowest e+e- kinetic energy                         1 keV
+Lowest muon/hadron kinetic energy                  1 keV
+Use ICRU90 data                                    0
+Fluctuations of dE/dx are enabled                  1
+Type of fluctuation model for leptons and hadrons  Urban
+Use built-in Birks satuaration                     1
+Build CSDA range enabled                           0
+Use cut as a final range enabled                   0
+Enable angular generator interface                 0
+Max kinetic energy for CSDA tables                 1 GeV
+Max kinetic energy for NIEL computation            0 eV 
+Linear loss limit                                  0.01
+Read data from file for e+e- pair production by mu 0
+=======================================================================
+======                 Multiple Scattering Parameters          ========
+=======================================================================
+Type of msc step limit algorithm for e+-           1
+Type of msc step limit algorithm for muons/hadrons 0
+Msc lateral displacement for e+- enabled           1
+Msc lateral displacement for muons and hadrons     0
+Urban msc model lateral displacement alg96         1
+Range factor for msc step limit for e+-            0.04
+Range factor for msc step limit for muons/hadrons  0.2
+Geometry factor for msc step limitation of e+-     2.5
+Safety factor for msc step limit for e+-           0.6
+Skin parameter for msc step limitation of e+-      1
+Lambda limit for msc step limit for e+-            1 mm
+Use Mott correction for e- scattering              0
+Factor used for dynamic computation of angular 
+  limit between single and multiple scattering     1
+Fixed angular limit between single 
+  and multiple scattering                          3.1416 rad
+Upper energy limit for e+- multiple scattering     100 MeV
+Type of electron single scattering model           0
+Type of nuclear form-factor                        1
+Screening factor                                   1
+=======================================================================
+
+phot:  for gamma SubType=12 BuildTable=0
+      LambdaPrime table from 200 keV to 100 TeV in 61 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+ LivermorePhElectric : Emin=    0 eV  Emax=  100 TeV  SauterGavrila Fluo
+
+compt:  for gamma SubType=13 BuildTable=1
+      Lambda table from 100 eV  to 1 MeV, 7 bins/decade, spline: 1
+      LambdaPrime table from 1 MeV to 100 TeV in 56 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LowEPComptonModel : Emin=    0 eV  Emax=   20 MeV Fluo
+        KleinNishina : Emin=   20 MeV Emax=  100 TeV Fluo
+
+conv:  for gamma SubType=14 BuildTable=1
+      Lambda table from 1.022 MeV to 100 TeV, 18 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+      BetheHeitler5D : Emin=    0 eV  Emax=  100 TeV  ModifiedTsai
+
+Rayl:  for gamma SubType=11 BuildTable=1
+      Lambda table from 100 eV  to 150 keV, 7 bins/decade, spline: 0
+      LambdaPrime table from 150 keV to 100 TeV in 62 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh : Emin=    0 eV  Emax=  100 TeV  CullenGenerator
+
+msc:  for e-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  GoudsmitSaunderson : Emin=    0 eV  Emax=  100 MeV Nbins=42 100 eV  - 100 MeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=42 100 MeV - 100 TeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+
+eIoni:  for e-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             PenIoni : Emin=    0 eV  Emax=  100 keV
+        MollerBhabha : Emin=  100 keV Emax=  100 TeV
+
+eBrem:  for e-  XStype:4  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  AngularGen2BS
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  AngularGen2BS
+
+ePairProd:  for e-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      Sampling table 25x1001; from 0.1 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           ePairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for e- XStype:1 SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for e+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  GoudsmitSaunderson : Emin=    0 eV  Emax=  100 MeV Nbins=42 100 eV  - 100 MeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=42 100 MeV - 100 TeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+
+eIoni:  for e+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             PenIoni : Emin=    0 eV  Emax=  100 keV
+        MollerBhabha : Emin=  100 keV Emax=  100 TeV
+
+eBrem:  for e+  XStype:4  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  AngularGen2BS
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  AngularGen2BS
+
+ePairProd:  for e+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      Sampling table 25x1001; from 0.1 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           ePairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+annihil:  for e+ XStype:2 SubType=5 BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for e+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for proton  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+hBrems:  for proton  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for proton  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for proton XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for GenericIon  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+ionIoni:  for GenericIon  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+    LindhardSorensen : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for alpha  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+ionIoni:  for alpha  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon : Emin=    0 eV  Emax=7.9452 MeV
+          BetheBloch : Emin=7.9452 MeV Emax=  100 TeV
+
+msc:  for anti_proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for anti_proton  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+hBrems:  for anti_proton  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for anti_proton  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for anti_proton XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for kaon+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=1.05231 MeV
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV
+
+hBrems:  for kaon+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for kaon+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for kaon+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for kaon-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=1.05231 MeV
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV
+
+hBrems:  for kaon-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for kaon-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for kaon- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of kaon+
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+muIoni:  for mu+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=  200 keV
+        MuBetheBloch : Emin=  200 keV Emax=  100 TeV
+
+muBrems:  for mu+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+muPairProd:  for mu+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 21x1001; from 0.85 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for mu+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+muIoni:  for mu-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=  200 keV
+        MuBetheBloch : Emin=  200 keV Emax=  100 TeV
+
+muBrems:  for mu-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+muPairProd:  for mu-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 21x1001; from 0.85 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for mu- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of mu+
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for pi+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=297.505 keV
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV
+
+hBrems:  for pi+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for pi+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for pi+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for pi-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=297.505 keV
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV
+
+hBrems:  for pi-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for pi-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for pi- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of pi+
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Registered graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRepFile (HepRepFile)
+  RayTracer (RayTracer)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+  TOOLSSG_OFFSCREEN (TSG_OFFSCREEN)
+  TOOLSSG_OFFSCREEN (TSG_OFFSCREEN, TSG_FILE)
+  OpenGLImmediateQt (OGLIQt, OGLI)
+  OpenGLStoredQt (OGLSQt, OGL, OGLS)
+  Qt3D (Qt3D)
+  TOOLSSG_QT_GLES (TSG_QT_GLES, TSGQt, TSG)
+  TOOLSSG_QT_ZB (TSG_QT_ZB, TSGQtZB)
+Default graphics system is: TSG_OFFSCREEN (based on batch session).
+Default window size hint is: 600x600-0+0 (based on G4VisManager initialisation).
+Note: Parameters specified on the command line will override these defaults.
+      Use "vis/open" without parameters to get these defaults.
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByAttribute
+  drawByCharge
+  drawByOriginVolume
+  drawByParticleID
+  drawByEncounteredVolume
+
+Registered models:
+  None
+
+Registered filter factories:
+  attributeFilter
+  chargeFilter
+  originVolumeFilter
+  particleFilter
+  encounteredVolumeFilter
+
+Registered filters:
+  None
+
+You have successfully registered the following user vis actions.
+Run Duration User Vis Actions: none
+End of Event User Vis Actions: none
+End of Run User Vis Actions: none
+
+Some /vis commands (optionally) take a string to specify colour.
+"/vis/list" to see available colours.
+G4VisManager: Using G4TrajectoryDrawByCharge as fallback trajectory model.
+See commands in /vis/modeling/trajectories/ for other options.
+G4WT10 > ... set ntuple merging row mode : row-wise - done
+G4WT3 > ... set ntuple merging row mode : row-wise - done
+G4WT6 > ... set ntuple merging row mode : row-wise - done
+G4WT17 > ... set ntuple merging row mode : row-wise - done
+G4WT25 > ... set ntuple merging row mode : row-wise - done
+G4WT42 > ... set ntuple merging row mode : row-wise - done
+G4WT40 > ... set ntuple merging row mode : row-wise - done
+G4WT27 > ... set ntuple merging row mode : row-wise - done
+G4WT34 > ... set ntuple merging row mode : row-wise - done
+G4WT39 > ... set ntuple merging row mode : row-wise - done
+G4WT19 > ... set ntuple merging row mode : row-wise - done
+G4WT43 > ... set ntuple merging row mode : row-wise - done
+G4WT24 > ... set ntuple merging row mode : row-wise - done
+G4WT47 > ... set ntuple merging row mode : row-wise - done
+G4WT23 > ... set ntuple merging row mode : row-wise - done
+G4WT28 > ... set ntuple merging row mode : row-wise - done
+G4WT33 > ... set ntuple merging row mode : row-wise - done
+G4WT45 > ... set ntuple merging row mode : row-wise - done
+G4WT9 > ... set ntuple merging row mode : row-wise - done
+G4WT2 > ... set ntuple merging row mode : row-wise - done
+G4WT22 > ... set ntuple merging row mode : row-wise - done
+G4WT18 > ... set ntuple merging row mode : row-wise - done
+G4WT8 > ... set ntuple merging row mode : row-wise - done
+G4WT5 > ... set ntuple merging row mode : row-wise - done
+G4WT35 > ... set ntuple merging row mode : row-wise - done
+G4WT36 > ... set ntuple merging row mode : row-wise - done
+G4WT44 > ... set ntuple merging row mode : row-wise - done
+G4WT32 > ... set ntuple merging row mode : row-wise - done
+G4WT13 > ... set ntuple merging row mode : row-wise - done
+G4WT37 > ... set ntuple merging row mode : row-wise - done
+G4WT46 > ... set ntuple merging row mode : row-wise - done
+G4WT38 > ... set ntuple merging row mode : row-wise - done
+G4WT1 > ... set ntuple merging row mode : row-wise - done
+G4WT31 > ... set ntuple merging row mode : row-wise - done
+G4WT12 > ... set ntuple merging row mode : row-wise - done
+G4WT20 > ... set ntuple merging row mode : row-wise - done
+G4WT15 > ... set ntuple merging row mode : row-wise - done
+G4WT4 > ... set ntuple merging row mode : row-wise - done
+G4WT29 > ... set ntuple merging row mode : row-wise - done
+G4WT16 > ... set ntuple merging row mode : row-wise - done
+G4WT0 > ... set ntuple merging row mode : row-wise - done
+G4WT41 > ... set ntuple merging row mode : row-wise - done
+G4WT14 > ... set ntuple merging row mode : row-wise - done
+G4WT11 > ... set ntuple merging row mode : row-wise - done
+G4WT48 > ... set ntuple merging row mode : row-wise - done
+G4WT30 > ... set ntuple merging row mode : row-wise - done
+G4WT7 > ... set ntuple merging row mode : row-wise - done
+G4WT26 > ... set ntuple merging row mode : row-wise - done
+G4WT21 > ... set ntuple merging row mode : row-wise - done
+G4WT49 > ... set ntuple merging row mode : row-wise - done
+G4WT24 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t24.root - done
+G4WT24 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT34 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t34.root - done
+G4WT35 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t35.root - done
+G4WT35 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT40 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t40.root - done
+G4WT44 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t44.root - done
+G4WT34 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT16 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t16.root - done
+G4WT21 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t21.root - done
+G4WT40 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT42 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t42.root - done
+G4WT21 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT36 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t36.root - done
+G4WT31 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t31.root - done
+G4WT44 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT5 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t5.root - done
+G4WT32 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t32.root - done
+G4WT38 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t38.root - done
+G4WT11 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t11.root - done
+G4WT5 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT8 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t8.root - done
+G4WT3 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t3.root - done
+G4WT48 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t48.root - done
+G4WT19 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t19.root - done
+G4WT29 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t29.root - done
+G4WT39 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t39.root - done
+G4WT29 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT37 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t37.root - done
+G4WT39 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT10 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t10.root - done
+G4WT10 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT12 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t12.root - done
+G4WT31 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT28 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t28.root - done
+G4WT20 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t20.root - done
+G4WT28 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT43 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t43.root - done
+G4WT18 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t18.root - done
+G4WT0 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t0.root - done
+G4WT18 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT19 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT13 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t13.root - done
+G4WT13 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT17 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t17.root - done
+G4WT17 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT3 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT1 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t1.root - done
+G4WT9 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t9.root - done
+G4WT4 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t4.root - done
+G4WT1 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT9 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT4 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT25 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t25.root - done
+G4WT36 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT37 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT8 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT22 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t22.root - done
+G4WT22 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT15 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t15.root - done
+G4WT15 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT38 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT41 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t41.root - done
+G4WT11 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT12 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT26 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t26.root - done
+G4WT26 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT16 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT20 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT7 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t7.root - done
+G4WT43 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT48 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT7 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT41 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT14 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t14.root - done
+G4WT47 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t47.root - done
+G4WT47 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT46 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t46.root - done
+G4WT46 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT42 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT2 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t2.root - done
+G4WT0 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT45 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t45.root - done
+G4WT45 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT2 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT5 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t5.root - done
+G4WT29 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t29.root - done
+G4WT10 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t10.root - done
+G4WT9 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t9.root - done
+G4WT3 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t3.root - done
+G4WT1 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t1.root - done
+G4WT25 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT32 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT17 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t17.root - done
+G4WT18 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t18.root - done
+G4WT19 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t19.root - done
+G4WT13 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t13.root - done
+G4WT8 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t8.root - done
+G4WT37 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t37.root - done
+G4WT36 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t36.root - done
+G4WT49 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t49.root - done
+G4WT49 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT14 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT31 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t31.root - done
+G4WT33 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t33.root - done
+G4WT33 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT6 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t6.root - done
+G4WT6 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT27 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t27.root - done
+G4WT23 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t23.root - done
+G4WT27 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT23 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT30 > ... create file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t30.root - done
+G4WT30 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5.root - done
+G4WT7 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t7.root - done
+G4WT16 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t16.root - done
+G4WT12 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t12.root - done
+G4WT11 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t11.root - done
+G4WT26 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t26.root - done
+G4WT43 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t43.root - done
+G4WT48 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t48.root - done
+G4WT24 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t24.root - done
+G4WT38 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t38.root - done
+G4WT41 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t41.root - done
+G4WT35 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t35.root - done
+G4WT2 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t2.root - done
+G4WT34 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t34.root - done
+G4WT0 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t0.root - done
+G4WT46 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t46.root - done
+G4WT47 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t47.root - done
+G4WT45 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t45.root - done
+G4WT25 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t25.root - done
+G4WT20 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t20.root - done
+G4WT40 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t40.root - done
+G4WT49 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t49.root - done
+G4WT21 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t21.root - done
+G4WT33 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t33.root - done
+G4WT23 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t23.root - done
+G4WT39 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t39.root - done
+G4WT4 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t4.root - done
+G4WT28 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t28.root - done
+G4WT22 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t22.root - done
+G4WT15 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t15.root - done
+G4WT32 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t32.root - done
+G4WT44 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t44.root - done
+G4WT42 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t42.root - done
+G4WT6 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t6.root - done
+G4WT14 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t14.root - done
+G4WT30 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t30.root - done
+G4WT27 > ... open analysis file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t27.root - done
+G4WT15 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t15.root - done
+G4WT1 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t1.root - done
+G4WT4 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t4.root - done
+G4WT25 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t25.root - done
+G4WT4 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t4.root - done
+G4WT1 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t1.root - done
+G4WT30 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t30.root - done
+G4WT40 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t40.root - done
+G4WT25 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t25.root - done
+G4WT15 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t15.root - done
+G4WT21 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t21.root - done
+G4WT26 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t26.root - done
+G4WT29 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t29.root - done
+G4WT32 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t32.root - done
+G4WT14 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t14.root - done
+G4WT44 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t44.root - done
+G4WT30 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t30.root - done
+G4WT13 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t13.root - done
+G4WT21 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t21.root - done
+G4WT14 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t14.root - done
+G4WT10 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t10.root - done
+G4WT44 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t44.root - done
+G4WT18 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t18.root - done
+G4WT29 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t29.root - done
+G4WT26 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t26.root - done
+G4WT40 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t40.root - done
+G4WT13 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t13.root - done
+G4WT10 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t10.root - done
+G4WT34 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t34.root - done
+G4WT42 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t42.root - done
+G4WT18 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t18.root - done
+G4WT32 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t32.root - done
+G4WT45 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t45.root - done
+G4WT8 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t8.root - done
+G4WT34 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t34.root - done
+G4WT17 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t17.root - done
+G4WT8 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t8.root - done
+G4WT45 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t45.root - done
+G4WT16 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t16.root - done
+G4WT7 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t7.root - done
+G4WT33 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t33.root - done
+G4WT2 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t2.root - done
+G4WT43 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t43.root - done
+G4WT0 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t0.root - done
+G4WT19 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t19.root - done
+G4WT16 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t16.root - done
+G4WT27 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t27.root - done
+G4WT42 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t42.root - done
+G4WT2 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t2.root - done
+G4WT24 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t24.root - done
+G4WT19 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t19.root - done
+G4WT33 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t33.root - done
+G4WT48 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t48.root - done
+G4WT7 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t7.root - done
+G4WT43 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t43.root - done
+G4WT20 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t20.root - done
+G4WT0 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t0.root - done
+G4WT27 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t27.root - done
+G4WT17 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t17.root - done
+G4WT38 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t38.root - done
+G4WT20 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t20.root - done
+G4WT12 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t12.root - done
+G4WT47 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t47.root - done
+G4WT48 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t48.root - done
+G4WT24 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t24.root - done
+G4WT12 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t12.root - done
+G4WT47 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t47.root - done
+G4WT23 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t23.root - done
+G4WT38 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t38.root - done
+G4WT23 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t23.root - done
+G4WT41 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t41.root - done
+G4WT46 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t46.root - done
+G4WT41 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t41.root - done
+G4WT9 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t9.root - done
+G4WT35 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t35.root - done
+G4WT46 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t46.root - done
+G4WT35 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t35.root - done
+G4WT5 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t5.root - done
+G4WT37 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t37.root - done
+G4WT5 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t5.root - done
+G4WT6 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t6.root - done
+G4WT37 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t37.root - done
+G4WT9 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t9.root - done
+G4WT6 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t6.root - done
+G4WT49 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t49.root - done
+G4WT36 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t36.root - done
+G4WT49 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t49.root - done
+G4WT36 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t36.root - done
+G4WT22 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t22.root - done
+G4WT31 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t31.root - done
+G4WT11 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t11.root - done
+G4WT39 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t39.root - done
+G4WT31 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t31.root - done
+G4WT22 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t22.root - done
+G4WT11 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t11.root - done
+G4WT39 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t39.root - done
+G4WT28 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t28.root - done
+G4WT28 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t28.root - done
+G4WT3 > ... write file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t3.root - done
+G4WT3 > ... close file : /scratch/alice/j/jss55/G4Data/NewMuonGen_RealRef_PolishedWLSPMTBound_ShellPMT/3-inchPMT_Ref_Real_Det5_t3.root - done
+Graphics systems deleted.
+Visualization Manager deleting...

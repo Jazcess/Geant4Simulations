@@ -1,0 +1,3 @@
+/myDet/wlsSize 350.0 mm
+/myDet/wlsThickness 10.0 mm
+/control/loop steps_Ts.mac len 5 10 0.5

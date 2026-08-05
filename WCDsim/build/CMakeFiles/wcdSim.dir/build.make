@@ -76,127 +76,127 @@ CMakeFiles/wcdSim.dir/wcdSim.cc.o: CMakeFiles/wcdSim.dir/flags.make
 CMakeFiles/wcdSim.dir/wcdSim.cc.o: /home/j/jss55/Software/geant4/WCDsim/wcdSim.cc
 CMakeFiles/wcdSim.dir/wcdSim.cc.o: CMakeFiles/wcdSim.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/j/jss55/Software/geant4/WCDsim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/wcdSim.dir/wcdSim.cc.o"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/wcdSim.cc.o -MF CMakeFiles/wcdSim.dir/wcdSim.cc.o.d -o CMakeFiles/wcdSim.dir/wcdSim.cc.o -c /home/j/jss55/Software/geant4/WCDsim/wcdSim.cc
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/wcdSim.cc.o -MF CMakeFiles/wcdSim.dir/wcdSim.cc.o.d -o CMakeFiles/wcdSim.dir/wcdSim.cc.o -c /home/j/jss55/Software/geant4/WCDsim/wcdSim.cc
 
 CMakeFiles/wcdSim.dir/wcdSim.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wcdSim.dir/wcdSim.cc.i"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/wcdSim.cc > CMakeFiles/wcdSim.dir/wcdSim.cc.i
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/wcdSim.cc > CMakeFiles/wcdSim.dir/wcdSim.cc.i
 
 CMakeFiles/wcdSim.dir/wcdSim.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wcdSim.dir/wcdSim.cc.s"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/wcdSim.cc -o CMakeFiles/wcdSim.dir/wcdSim.cc.s
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/wcdSim.cc -o CMakeFiles/wcdSim.dir/wcdSim.cc.s
 
 CMakeFiles/wcdSim.dir/action.cc.o: CMakeFiles/wcdSim.dir/flags.make
 CMakeFiles/wcdSim.dir/action.cc.o: /home/j/jss55/Software/geant4/WCDsim/action.cc
 CMakeFiles/wcdSim.dir/action.cc.o: CMakeFiles/wcdSim.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/j/jss55/Software/geant4/WCDsim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/wcdSim.dir/action.cc.o"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/action.cc.o -MF CMakeFiles/wcdSim.dir/action.cc.o.d -o CMakeFiles/wcdSim.dir/action.cc.o -c /home/j/jss55/Software/geant4/WCDsim/action.cc
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/action.cc.o -MF CMakeFiles/wcdSim.dir/action.cc.o.d -o CMakeFiles/wcdSim.dir/action.cc.o -c /home/j/jss55/Software/geant4/WCDsim/action.cc
 
 CMakeFiles/wcdSim.dir/action.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wcdSim.dir/action.cc.i"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/action.cc > CMakeFiles/wcdSim.dir/action.cc.i
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/action.cc > CMakeFiles/wcdSim.dir/action.cc.i
 
 CMakeFiles/wcdSim.dir/action.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wcdSim.dir/action.cc.s"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/action.cc -o CMakeFiles/wcdSim.dir/action.cc.s
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/action.cc -o CMakeFiles/wcdSim.dir/action.cc.s
 
 CMakeFiles/wcdSim.dir/construction.cc.o: CMakeFiles/wcdSim.dir/flags.make
 CMakeFiles/wcdSim.dir/construction.cc.o: /home/j/jss55/Software/geant4/WCDsim/construction.cc
 CMakeFiles/wcdSim.dir/construction.cc.o: CMakeFiles/wcdSim.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/j/jss55/Software/geant4/WCDsim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/wcdSim.dir/construction.cc.o"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/construction.cc.o -MF CMakeFiles/wcdSim.dir/construction.cc.o.d -o CMakeFiles/wcdSim.dir/construction.cc.o -c /home/j/jss55/Software/geant4/WCDsim/construction.cc
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/construction.cc.o -MF CMakeFiles/wcdSim.dir/construction.cc.o.d -o CMakeFiles/wcdSim.dir/construction.cc.o -c /home/j/jss55/Software/geant4/WCDsim/construction.cc
 
 CMakeFiles/wcdSim.dir/construction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wcdSim.dir/construction.cc.i"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/construction.cc > CMakeFiles/wcdSim.dir/construction.cc.i
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/construction.cc > CMakeFiles/wcdSim.dir/construction.cc.i
 
 CMakeFiles/wcdSim.dir/construction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wcdSim.dir/construction.cc.s"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/construction.cc -o CMakeFiles/wcdSim.dir/construction.cc.s
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/construction.cc -o CMakeFiles/wcdSim.dir/construction.cc.s
 
 CMakeFiles/wcdSim.dir/detector.cc.o: CMakeFiles/wcdSim.dir/flags.make
 CMakeFiles/wcdSim.dir/detector.cc.o: /home/j/jss55/Software/geant4/WCDsim/detector.cc
 CMakeFiles/wcdSim.dir/detector.cc.o: CMakeFiles/wcdSim.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/j/jss55/Software/geant4/WCDsim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/wcdSim.dir/detector.cc.o"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/detector.cc.o -MF CMakeFiles/wcdSim.dir/detector.cc.o.d -o CMakeFiles/wcdSim.dir/detector.cc.o -c /home/j/jss55/Software/geant4/WCDsim/detector.cc
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/detector.cc.o -MF CMakeFiles/wcdSim.dir/detector.cc.o.d -o CMakeFiles/wcdSim.dir/detector.cc.o -c /home/j/jss55/Software/geant4/WCDsim/detector.cc
 
 CMakeFiles/wcdSim.dir/detector.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wcdSim.dir/detector.cc.i"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/detector.cc > CMakeFiles/wcdSim.dir/detector.cc.i
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/detector.cc > CMakeFiles/wcdSim.dir/detector.cc.i
 
 CMakeFiles/wcdSim.dir/detector.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wcdSim.dir/detector.cc.s"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/detector.cc -o CMakeFiles/wcdSim.dir/detector.cc.s
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/detector.cc -o CMakeFiles/wcdSim.dir/detector.cc.s
 
 CMakeFiles/wcdSim.dir/event.cc.o: CMakeFiles/wcdSim.dir/flags.make
 CMakeFiles/wcdSim.dir/event.cc.o: /home/j/jss55/Software/geant4/WCDsim/event.cc
 CMakeFiles/wcdSim.dir/event.cc.o: CMakeFiles/wcdSim.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/j/jss55/Software/geant4/WCDsim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/wcdSim.dir/event.cc.o"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/event.cc.o -MF CMakeFiles/wcdSim.dir/event.cc.o.d -o CMakeFiles/wcdSim.dir/event.cc.o -c /home/j/jss55/Software/geant4/WCDsim/event.cc
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/event.cc.o -MF CMakeFiles/wcdSim.dir/event.cc.o.d -o CMakeFiles/wcdSim.dir/event.cc.o -c /home/j/jss55/Software/geant4/WCDsim/event.cc
 
 CMakeFiles/wcdSim.dir/event.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wcdSim.dir/event.cc.i"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/event.cc > CMakeFiles/wcdSim.dir/event.cc.i
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/event.cc > CMakeFiles/wcdSim.dir/event.cc.i
 
 CMakeFiles/wcdSim.dir/event.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wcdSim.dir/event.cc.s"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/event.cc -o CMakeFiles/wcdSim.dir/event.cc.s
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/event.cc -o CMakeFiles/wcdSim.dir/event.cc.s
 
 CMakeFiles/wcdSim.dir/generator.cc.o: CMakeFiles/wcdSim.dir/flags.make
 CMakeFiles/wcdSim.dir/generator.cc.o: /home/j/jss55/Software/geant4/WCDsim/generator.cc
 CMakeFiles/wcdSim.dir/generator.cc.o: CMakeFiles/wcdSim.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/j/jss55/Software/geant4/WCDsim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/wcdSim.dir/generator.cc.o"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/generator.cc.o -MF CMakeFiles/wcdSim.dir/generator.cc.o.d -o CMakeFiles/wcdSim.dir/generator.cc.o -c /home/j/jss55/Software/geant4/WCDsim/generator.cc
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/generator.cc.o -MF CMakeFiles/wcdSim.dir/generator.cc.o.d -o CMakeFiles/wcdSim.dir/generator.cc.o -c /home/j/jss55/Software/geant4/WCDsim/generator.cc
 
 CMakeFiles/wcdSim.dir/generator.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wcdSim.dir/generator.cc.i"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/generator.cc > CMakeFiles/wcdSim.dir/generator.cc.i
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/generator.cc > CMakeFiles/wcdSim.dir/generator.cc.i
 
 CMakeFiles/wcdSim.dir/generator.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wcdSim.dir/generator.cc.s"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/generator.cc -o CMakeFiles/wcdSim.dir/generator.cc.s
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/generator.cc -o CMakeFiles/wcdSim.dir/generator.cc.s
 
 CMakeFiles/wcdSim.dir/physics.cc.o: CMakeFiles/wcdSim.dir/flags.make
 CMakeFiles/wcdSim.dir/physics.cc.o: /home/j/jss55/Software/geant4/WCDsim/physics.cc
 CMakeFiles/wcdSim.dir/physics.cc.o: CMakeFiles/wcdSim.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/j/jss55/Software/geant4/WCDsim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/wcdSim.dir/physics.cc.o"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/physics.cc.o -MF CMakeFiles/wcdSim.dir/physics.cc.o.d -o CMakeFiles/wcdSim.dir/physics.cc.o -c /home/j/jss55/Software/geant4/WCDsim/physics.cc
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/physics.cc.o -MF CMakeFiles/wcdSim.dir/physics.cc.o.d -o CMakeFiles/wcdSim.dir/physics.cc.o -c /home/j/jss55/Software/geant4/WCDsim/physics.cc
 
 CMakeFiles/wcdSim.dir/physics.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wcdSim.dir/physics.cc.i"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/physics.cc > CMakeFiles/wcdSim.dir/physics.cc.i
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/physics.cc > CMakeFiles/wcdSim.dir/physics.cc.i
 
 CMakeFiles/wcdSim.dir/physics.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wcdSim.dir/physics.cc.s"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/physics.cc -o CMakeFiles/wcdSim.dir/physics.cc.s
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/physics.cc -o CMakeFiles/wcdSim.dir/physics.cc.s
 
 CMakeFiles/wcdSim.dir/run.cc.o: CMakeFiles/wcdSim.dir/flags.make
 CMakeFiles/wcdSim.dir/run.cc.o: /home/j/jss55/Software/geant4/WCDsim/run.cc
 CMakeFiles/wcdSim.dir/run.cc.o: CMakeFiles/wcdSim.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/j/jss55/Software/geant4/WCDsim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/wcdSim.dir/run.cc.o"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/run.cc.o -MF CMakeFiles/wcdSim.dir/run.cc.o.d -o CMakeFiles/wcdSim.dir/run.cc.o -c /home/j/jss55/Software/geant4/WCDsim/run.cc
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/run.cc.o -MF CMakeFiles/wcdSim.dir/run.cc.o.d -o CMakeFiles/wcdSim.dir/run.cc.o -c /home/j/jss55/Software/geant4/WCDsim/run.cc
 
 CMakeFiles/wcdSim.dir/run.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wcdSim.dir/run.cc.i"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/run.cc > CMakeFiles/wcdSim.dir/run.cc.i
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/run.cc > CMakeFiles/wcdSim.dir/run.cc.i
 
 CMakeFiles/wcdSim.dir/run.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wcdSim.dir/run.cc.s"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/run.cc -o CMakeFiles/wcdSim.dir/run.cc.s
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/run.cc -o CMakeFiles/wcdSim.dir/run.cc.s
 
 CMakeFiles/wcdSim.dir/stepping.cc.o: CMakeFiles/wcdSim.dir/flags.make
 CMakeFiles/wcdSim.dir/stepping.cc.o: /home/j/jss55/Software/geant4/WCDsim/stepping.cc
 CMakeFiles/wcdSim.dir/stepping.cc.o: CMakeFiles/wcdSim.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/j/jss55/Software/geant4/WCDsim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/wcdSim.dir/stepping.cc.o"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/stepping.cc.o -MF CMakeFiles/wcdSim.dir/stepping.cc.o.d -o CMakeFiles/wcdSim.dir/stepping.cc.o -c /home/j/jss55/Software/geant4/WCDsim/stepping.cc
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wcdSim.dir/stepping.cc.o -MF CMakeFiles/wcdSim.dir/stepping.cc.o.d -o CMakeFiles/wcdSim.dir/stepping.cc.o -c /home/j/jss55/Software/geant4/WCDsim/stepping.cc
 
 CMakeFiles/wcdSim.dir/stepping.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wcdSim.dir/stepping.cc.i"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/stepping.cc > CMakeFiles/wcdSim.dir/stepping.cc.i
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/j/jss55/Software/geant4/WCDsim/stepping.cc > CMakeFiles/wcdSim.dir/stepping.cc.i
 
 CMakeFiles/wcdSim.dir/stepping.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wcdSim.dir/stepping.cc.s"
-	/cm/shared/spack/opt/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-yxgv2blf2cvrmgglf5c3kja4eye5hsbb/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/stepping.cc -o CMakeFiles/wcdSim.dir/stepping.cc.s
+	/home/j/jss55/miniconda3/envs/aerieEnv/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/j/jss55/Software/geant4/WCDsim/stepping.cc -o CMakeFiles/wcdSim.dir/stepping.cc.s
 
 # Object files for target wcdSim
 wcdSim_OBJECTS = \
@@ -231,6 +231,7 @@ wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4RayTrace
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4VRML.so
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4ToolsSG.so
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4OpenGL.so
+wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4visQt3D.so
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4vis_management.so
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4modeling.so
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4interfaces.so
@@ -250,13 +251,13 @@ wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4particle
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4geometry.so
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4materials.so
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4graphics_reps.so
-wcdSim: /usr/lib64/libGL.so
-wcdSim: /usr/lib64/libQt5OpenGL.so.5.15.9
-wcdSim: /usr/lib64/libQt5Widgets.so.5.15.9
-wcdSim: /usr/lib64/libQt5Gui.so.5.15.9
-wcdSim: /usr/lib64/libQt5Core.so.5.15.9
+wcdSim: /home/j/jss55/miniconda3/envs/G4Env/lib/libGL.so
+wcdSim: /home/j/jss55/miniconda3/envs/G4Env/lib/libQt5OpenGL.so.5.15.15
+wcdSim: /home/j/jss55/miniconda3/envs/G4Env/lib/libQt5Widgets.so.5.15.15
+wcdSim: /home/j/jss55/miniconda3/envs/G4Env/lib/libQt5Gui.so.5.15.15
+wcdSim: /home/j/jss55/miniconda3/envs/G4Env/lib/libQt5Core.so.5.15.15
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4analysis.so
-wcdSim: /usr/lib64/libexpat.so
+wcdSim: /home/j/jss55/miniconda3/envs/G4Env/lib/libexpat.so
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4zlib.so
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4intercoms.so
 wcdSim: /home/j/jss55/Software/geant4/geant4-v11.2.1-install/lib64/libG4global.so
